@@ -40,6 +40,13 @@ namespace ShoppingCartWebApiTests
             Assert.That(resultCart.TotalValue, Is.EqualTo(mockItem1.Value));
             Assert.That(resultCart.ItemCountMap[mockItem1.Id], Is.EqualTo(1));
 
+            var item = resultCart.ItemList[0];
+            Assert.That(item.Id, Is.EqualTo(mockItem1.Id));
+            Assert.That(item.Name, Is.EqualTo(mockItem1.Name));
+            Assert.That(item.Description, Is.EqualTo(mockItem1.Description));
+            Assert.That(item.Value, Is.EqualTo(mockItem1.Value));
+            Assert.That(item.InventoryCount, Is.EqualTo(mockItem1.InventoryCount));
+
             //Test api response
             Assert.That(result.StatusCode, Is.EqualTo((int) HttpStatusCode.OK));
         }

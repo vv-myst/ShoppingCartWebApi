@@ -7,8 +7,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6c3c54dd-b760-47dd-8450-5411ab1536d6" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ShoppingCartWebApi/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.ShoppingCartWebApi/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Controllers/ShoppingCartController.cs" afterPath="$PROJECT_DIR$/Controllers/ShoppingCartController.cs" />
-      <change beforePath="$PROJECT_DIR$/ShoppingCartWebApi.Tests/EmptyShoppingCartControllerTests.cs" afterPath="$PROJECT_DIR$/ShoppingCartWebApi.Tests/EmptyShoppingCartControllerTests.cs" />
+      <change beforePath="$PROJECT_DIR$/ShoppingCartWebApi.Tests/ShoppingCartControllerTests.cs" afterPath="$PROJECT_DIR$/ShoppingCartWebApi.Tests/ShoppingCartControllerTests.cs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,41 +20,24 @@
     <splitter split-orientation="horizontal" split-proportion="0.44835967">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="ShoppingCartControllerTests.cs" pinned="false" current-in-tab="false">
+          <file leaf-file-name="ShoppingCartControllerTests.cs" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/ShoppingCartWebApi.Tests/ShoppingCartControllerTests.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="243">
-                  <caret line="143" column="80" lean-forward="false" selection-start-line="135" selection-start-column="12" selection-end-line="143" selection-end-column="80" />
+                <state relative-caret-position="527">
+                  <caret line="31" column="56" lean-forward="false" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="56" />
                   <folding>
-                    <marker date="1518871524192" expanded="true" signature="6:298" ph="..." />
-                    <marker date="1518871524192" expanded="true" signature="333:7409" ph="{...}" />
-                    <marker date="1518871524192" expanded="true" signature="398:7407" ph="{...}" />
-                    <marker date="1518871524192" expanded="true" signature="447:831" ph="{...}" />
-                    <marker date="1518871524192" expanded="true" signature="1105:1727" ph="{...}" />
-                    <marker date="1518871524192" expanded="true" signature="1839:2592" ph="{...}" />
-                    <marker date="1518871524192" expanded="true" signature="2697:3528" ph="{...}" />
-                    <marker date="1518871524192" expanded="true" signature="3650:4128" ph="{...}" />
-                    <marker date="1518871524192" expanded="true" signature="4260:5018" ph="{...}" />
-                    <marker date="1518871524192" expanded="true" signature="5146:5679" ph="{...}" />
-                    <marker date="1518871524192" expanded="true" signature="5791:6691" ph="{...}" />
-                    <marker date="1518871524192" expanded="true" signature="6804:7401" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="EmptyShoppingCartControllerTests.cs" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/ShoppingCartWebApi.Tests/EmptyShoppingCartControllerTests.cs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="15" column="32" lean-forward="false" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-                  <folding>
-                    <marker date="1518872875899" expanded="true" signature="6:210" ph="..." />
-                    <marker date="1518872875899" expanded="true" signature="245:2113" ph="{...}" />
-                    <marker date="1518872875899" expanded="true" signature="315:2111" ph="{...}" />
-                    <marker date="1518872875899" expanded="true" signature="370:889" ph="{...}" />
-                    <marker date="1518872875899" expanded="true" signature="1205:1441" ph="{...}" />
-                    <marker date="1518872875899" expanded="true" signature="1526:2105" ph="{...}" />
+                    <marker date="1518873208503" expanded="true" signature="6:298" ph="..." />
+                    <marker date="1518873208503" expanded="true" signature="333:7809" ph="{...}" />
+                    <marker date="1518873208503" expanded="true" signature="398:7807" ph="{...}" />
+                    <marker date="1518873208503" expanded="true" signature="447:831" ph="{...}" />
+                    <marker date="1518873208503" expanded="true" signature="1105:2127" ph="{...}" />
+                    <marker date="1518873208503" expanded="true" signature="2239:2992" ph="{...}" />
+                    <marker date="1518873208503" expanded="true" signature="3097:3928" ph="{...}" />
+                    <marker date="1518873208503" expanded="true" signature="4050:4528" ph="{...}" />
+                    <marker date="1518873208503" expanded="true" signature="4660:5418" ph="{...}" />
+                    <marker date="1518873208503" expanded="true" signature="5546:6079" ph="{...}" />
+                    <marker date="1518873208503" expanded="true" signature="6191:7091" ph="{...}" />
+                    <marker date="1518873208503" expanded="true" signature="7204:7801" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -94,22 +76,18 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="appsettings.json" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/appsettings.json">
+          <file leaf-file-name="Item.cs" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Models/Item.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="appsettings.Development.json" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/appsettings.Development.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
+                <state relative-caret-position="187">
+                  <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+                  <folding>
+                    <marker date="1518819032107" expanded="true" signature="0:194" ph="Auto generated information. Please do not modify" />
+                    <marker date="1518819032107" expanded="true" signature="58:182" ph="/* ShoppingCartWebApi ShoppingCartWebApi Item.cs ... */" />
+                    <marker date="1518819032107" expanded="true" signature="231:759" ph="{...}" />
+                    <marker date="1518819032107" expanded="true" signature="255:757" ph="{...}" />
+                    <marker date="1518819032107" expanded="true" signature="382:559" ph="{...}" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -228,7 +206,6 @@
         <option value="$PROJECT_DIR$/ShoppingCartWebApi.Tests/ShoppingCartWebApiTests/Tests.cs" />
         <option value="$PROJECT_DIR$/ShoppingCartWebApi.Tests/ShoppingCartWebApiTests_xUnit/UnitTest1.cs" />
         <option value="$PROJECT_DIR$/ShoppingCartWebApi.Tests/ShoppingCartWebApiTests_xUnit/ShoppingCartControllerTests.cs" />
-        <option value="$PROJECT_DIR$/Models/Item.cs" />
         <option value="$PROJECT_DIR$/Models/Extensions/ShoppingCartExtensions.cs" />
         <option value="$PROJECT_DIR$/ShoppingCartEntities.cs" />
         <option value="$PROJECT_DIR$/Startup.cs" />
@@ -241,9 +218,10 @@
         <option value="$PROJECT_DIR$/ShoppingCartWebApi.Tests/ShoppingCartWebApiTests/ShoppingCartControllerTests/UnitTest1.cs" />
         <option value="$PROJECT_DIR$/ShoppingCartWebApi.Tests/ShoppingCartWebApiTests/UnitTest1.cs" />
         <option value="$PROJECT_DIR$/Controllers/HttpErrors/HttpErrorResults.cs" />
-        <option value="$PROJECT_DIR$/ShoppingCartWebApi.Tests/ShoppingCartControllerTests.cs" />
         <option value="$PROJECT_DIR$/Controllers/ShoppingCartController.cs" />
         <option value="$PROJECT_DIR$/ShoppingCartWebApi.Tests/EmptyShoppingCartControllerTests.cs" />
+        <option value="$PROJECT_DIR$/Models/Item.cs" />
+        <option value="$PROJECT_DIR$/ShoppingCartWebApi.Tests/ShoppingCartControllerTests.cs" />
       </list>
     </option>
   </component>
@@ -367,12 +345,12 @@
       <workItem from="1518816443175" duration="8335000" />
       <workItem from="1518824847532" duration="12620000" />
       <workItem from="1518867492593" duration="894000" />
-      <workItem from="1518868442475" duration="4459000" />
+      <workItem from="1518868442475" duration="4842000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28251000" />
+    <option name="totallyTimeSpent" value="28634000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -385,18 +363,19 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1974" y="-8" width="1874" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960325" sideWeight="0.43003228" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Unit Tests" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960325" sideWeight="0.623789" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960325" sideWeight="0.37890205" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960325" sideWeight="0.621098" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.49779493" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960325" sideWeight="0.5699677" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960325" sideWeight="0.5678148" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.49779493" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960325" sideWeight="0.5898816" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11410119" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960325" sideWeight="0.376211" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960325" sideWeight="0.37890205" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -989,27 +968,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ShoppingCartWebApi.Tests/ShoppingCartControllerTests.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="143" column="80" lean-forward="false" selection-start-line="135" selection-start-column="12" selection-end-line="143" selection-end-column="80" />
-          <folding>
-            <marker date="1518871524192" expanded="true" signature="6:298" ph="..." />
-            <marker date="1518871524192" expanded="true" signature="333:7409" ph="{...}" />
-            <marker date="1518871524192" expanded="true" signature="398:7407" ph="{...}" />
-            <marker date="1518871524192" expanded="true" signature="447:831" ph="{...}" />
-            <marker date="1518871524192" expanded="true" signature="1105:1727" ph="{...}" />
-            <marker date="1518871524192" expanded="true" signature="1839:2592" ph="{...}" />
-            <marker date="1518871524192" expanded="true" signature="2697:3528" ph="{...}" />
-            <marker date="1518871524192" expanded="true" signature="3650:4128" ph="{...}" />
-            <marker date="1518871524192" expanded="true" signature="4260:5018" ph="{...}" />
-            <marker date="1518871524192" expanded="true" signature="5146:5679" ph="{...}" />
-            <marker date="1518871524192" expanded="true" signature="5791:6691" ph="{...}" />
-            <marker date="1518871524192" expanded="true" signature="6804:7401" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Controllers/HttpErrors/HttpErrorResults.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -1022,20 +980,6 @@
             <marker date="1518870165887" expanded="true" signature="367:443" ph="{...}" />
             <marker date="1518870165887" expanded="true" signature="568:853" ph="{...}" />
             <marker date="1518870165887" expanded="true" signature="740:816" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Models/Item.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding>
-            <marker date="1518819032107" expanded="true" signature="0:194" ph="Auto generated information. Please do not modify" />
-            <marker date="1518819032107" expanded="true" signature="58:182" ph="/* ShoppingCartWebApi ShoppingCartWebApi Item.cs ... */" />
-            <marker date="1518819032107" expanded="true" signature="231:759" ph="{...}" />
-            <marker date="1518819032107" expanded="true" signature="255:757" ph="{...}" />
-            <marker date="1518819032107" expanded="true" signature="382:559" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1128,6 +1072,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ShoppingCartWebApi.Tests/EmptyShoppingCartControllerTests.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="36" lean-forward="false" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+          <folding>
+            <marker date="1518872875899" expanded="true" signature="6:210" ph="..." />
+            <marker date="1518872875899" expanded="true" signature="245:2113" ph="{...}" />
+            <marker date="1518872875899" expanded="true" signature="315:2111" ph="{...}" />
+            <marker date="1518872875899" expanded="true" signature="370:889" ph="{...}" />
+            <marker date="1518872875899" expanded="true" signature="1205:1441" ph="{...}" />
+            <marker date="1518872875899" expanded="true" signature="1526:2105" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/Item.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding>
+            <marker date="1518819032107" expanded="true" signature="0:194" ph="Auto generated information. Please do not modify" />
+            <marker date="1518819032107" expanded="true" signature="58:182" ph="/* ShoppingCartWebApi ShoppingCartWebApi Item.cs ... */" />
+            <marker date="1518819032107" expanded="true" signature="231:759" ph="{...}" />
+            <marker date="1518819032107" expanded="true" signature="255:757" ph="{...}" />
+            <marker date="1518819032107" expanded="true" signature="382:559" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Program.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1141,17 +1114,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ShoppingCartWebApi.Tests/EmptyShoppingCartControllerTests.cs">
+    <entry file="file://$PROJECT_DIR$/ShoppingCartWebApi.Tests/ShoppingCartControllerTests.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="32" lean-forward="false" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+        <state relative-caret-position="527">
+          <caret line="31" column="56" lean-forward="false" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="56" />
           <folding>
-            <marker date="1518872875899" expanded="true" signature="6:210" ph="..." />
-            <marker date="1518872875899" expanded="true" signature="245:2113" ph="{...}" />
-            <marker date="1518872875899" expanded="true" signature="315:2111" ph="{...}" />
-            <marker date="1518872875899" expanded="true" signature="370:889" ph="{...}" />
-            <marker date="1518872875899" expanded="true" signature="1205:1441" ph="{...}" />
-            <marker date="1518872875899" expanded="true" signature="1526:2105" ph="{...}" />
+            <marker date="1518873208503" expanded="true" signature="6:298" ph="..." />
+            <marker date="1518873208503" expanded="true" signature="333:7809" ph="{...}" />
+            <marker date="1518873208503" expanded="true" signature="398:7807" ph="{...}" />
+            <marker date="1518873208503" expanded="true" signature="447:831" ph="{...}" />
+            <marker date="1518873208503" expanded="true" signature="1105:2127" ph="{...}" />
+            <marker date="1518873208503" expanded="true" signature="2239:2992" ph="{...}" />
+            <marker date="1518873208503" expanded="true" signature="3097:3928" ph="{...}" />
+            <marker date="1518873208503" expanded="true" signature="4050:4528" ph="{...}" />
+            <marker date="1518873208503" expanded="true" signature="4660:5418" ph="{...}" />
+            <marker date="1518873208503" expanded="true" signature="5546:6079" ph="{...}" />
+            <marker date="1518873208503" expanded="true" signature="6191:7091" ph="{...}" />
+            <marker date="1518873208503" expanded="true" signature="7204:7801" ph="{...}" />
           </folding>
         </state>
       </provider>
