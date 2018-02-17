@@ -60,15 +60,40 @@ types:
             :\"A fancy new tank top from Spring collection 2017\",\n  \"Value\":150.00,\n\
             \  \"InventoryCount\":50\n  }\n]"
           strict: false
-      ItemCount:
+      ItemCountMap:
+        type: "array"
+        description: "A dictionary of Items and their respective quantities where\
+          \ the ItemId is the key Quantity is the value"
+        uniqueItems: true
+        items:
+          type: "object"
+          description: "A dictionary object"
+          properties:
+            ItemId:
+              type: "integer"
+              format: "int64"
+              description: "The unique ID of the Item in the shopping cart"
+              example: 1235432
+            Quantity:
+              type: "integer"
+              format: "int8"
+              description: "The total number of items of a given ItemId present in\
+                \ the shopping cart"
+              minimum: 1
+              example: 2
+        example:
+          value: "[\n  {\n    \"ItemId\":123456,\n    \"Quantity\":2\n  },\n  {\n\
+            \    \"ItemId\":12565334,\n    \"Quantity\":5\n  }\n]"
+          strict: false
+      TotalItemCount:
         type: "integer"
         format: "int8"
         description: "Total number of items in the shopping cart"
         example: 3
-      TotalCost:
+      TotalValue:
         type: "number"
         format: "double"
-        description: "Sum total of all the items in the shopping cart"
+        description: "Total value of all the items in the shopping cart"
         example: 618
     example:
       value: "{\n  \"ItemList\":[{\"Id\":1234533, \"Name\":\"Designer Shoes Model\
@@ -77,7 +102,9 @@ types:
         , \"Description\":\"A pair of nice fancy shoes\", \"Value\":234.00, \"InventoryCount\"\
         :200}, {\"Id\":1367883, \"Name\":\"Spring Collection Top 23\", \"Description\"\
         :\"A fancy new tank top from Spring collection 2017\", \"Value\":150.00, \"\
-        InventoryCount\":50}],\n  \"ItemCount\":3,\n  \"TotalCost\":618.00\n}"
+        InventoryCount\":50}],\n  \"ItemCountMap\":[{\"ItemId\":1234533, \"Quantity\"\
+        :2}, {\"ItemId\":1367883, \"Quantity\":1}],\n  \"ItemCount\":3,\n  \"TotalValue\"\
+        :618.00\n}"
       strict: false
 /shoppingcart:
   delete:
@@ -92,8 +119,8 @@ types:
             description: "returns the shopping cart object with the latest changes\
               \ reflected"
             example:
-              value: "{\n  \"ItemList\":[],\n  \"ItemCount\":0,\n  \"TotalCost\":0\n\
-                }\n\n"
+              value: "{\n  \"ItemList\":[],\n  \"ItemCount\":0,\n  \"TotalValue\"\
+                :0\n}\n\n"
               strict: false
       400:
         description: "Request not completed"
@@ -126,36 +153,9 @@ types:
             example:
               value: "{\n  \"ItemList\":[{\"Id\":1234533, \"Name\":\"Designer Shoes\
                 \ Model Y\", \"Description\":\"A pair of nice fancy shoes\", \"Value\"\
-                :234.00, \"InventoryCount\":200}],\n  \"ItemCount\":1,\n  \"TotalCost\"\
-                :234.00\n}\n\n"
-              strict: false
-      400:
-        description: "Request not completed"
-  put:
-    displayName: "Update item count"
-    description: "Update the item count of a particular item in the shopping cart"
-    queryParameters:
-      ItemCount:
-        type: "integer"
-        format: "int8"
-        description: "The new item count of a particular item in the shopping cart"
-        minimum: 1
-        example: 4
-    responses:
-      200:
-        description: "Item count successfully updated"
-        body:
-          application/json:
-            type: "ShoppingCart"
-            description: "returns the shopping cart object with the latest changes\
-              \ reflected"
-            example:
-              value: "{\n  \"ItemList\":[{\"Id\":1234533, \"Name\":\"Designer Shoes\
-                \ Model Y\", \"Description\":\"A pair of nice fancy shoes\", \"Value\"\
-                :234.00, \"InventoryCount\":200}, {\"Id\":1234533, \"Name\":\"Designer\
-                \ Shoes Model Y\", \"Description\":\"A pair of nice fancy shoes\"\
-                , \"Value\":234.00, \"InventoryCount\":200}],\n  \"ItemCount\":2,\n\
-                \  \"TotalCost\":468.00\n}\n\n"
+                :234.00, \"InventoryCount\":200}],\n  \"ItemCountMap\":[{\"ItemId\"\
+                :1234533, \"Quantity\":1}],\n  \"ItemCount\":1,\n  \"TotalValue\"\
+                :234.00\n}\n"
               strict: false
       400:
         description: "Request not completed"
@@ -171,10 +171,39 @@ types:
             description: "returns the shopping cart object with the latest changes\
               \ reflected"
             example:
-              value: "{\n {\"Id\":1367883, \"Name\":\"Spring Collection Top 23\",\
-                \ \"Description\":\"A fancy new tank top from Spring collection 2017\"\
-                , \"Value\":150.00, \"InventoryCount\":50}],\n  \"ItemCount\":1,\n\
-                \  \"TotalCost\":150.00\n}\n\n"
+              value: "{\n  \"ItemList\":[{\"Id\":1367883, \"Name\":\"Spring Collection\
+                \ Top 23\", \"Description\":\"A fancy new tank top from Spring collection\
+                \ 2017\", \"Value\":150.00, \"InventoryCount\":50}],\n  \"ItemCountMap\"\
+                :[{\"ItemId\":1367883, \"Quantity\":1}],\n  \"ItemCount\":1,\n  \"\
+                TotalValue\":150.00\n}"
+              strict: false
+      400:
+        description: "Request not completed"
+/shoppingcart/{itemid}/{itemcount}:
+  uriParameters:
+    itemid:
+      type: "string"
+    itemcount:
+      type: "string"
+  put:
+    displayName: "Update item count"
+    description: "Update the item count of a particular item in the shopping cart"
+    responses:
+      200:
+        description: "Item count successfully updated"
+        body:
+          application/json:
+            type: "ShoppingCart"
+            description: "returns the shopping cart object with the latest changes\
+              \ reflected"
+            example:
+              value: "{\n  \"ItemList\":[{\"Id\":1234533, \"Name\":\"Designer Shoes\
+                \ Model Y\", \"Description\":\"A pair of nice fancy shoes\", \"Value\"\
+                :234.00, \"InventoryCount\":200}, {\"Id\":1234533, \"Name\":\"Designer\
+                \ Shoes Model Y\", \"Description\":\"A pair of nice fancy shoes\"\
+                , \"Value\":234.00, \"InventoryCount\":200}],\n  \"ItemCountMap\"\
+                :[{\"ItemId\":1234533, \"Quantity\":2}],\n  \"ItemCount\":2,\n  \"\
+                TotalValue\":468.00\n}"
               strict: false
       400:
         description: "Request not completed"
