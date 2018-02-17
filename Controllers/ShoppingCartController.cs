@@ -70,14 +70,6 @@ namespace ShoppingCartWebApi.Controllers
 
             await Task.Run(() =>
             {
-//                var itemsAlreadyInCart = shoppingCartEntities.InMemoryShoppingCart.ItemList.Where(x => x.Id == itemId)
-//                    .ToList();
-//                var item = itemsAlreadyInCart.FirstOrDefault(x => x.Id == itemId);
-//                var quantityToBeUpdated = itemCount - itemsAlreadyInCart.Count;
-//                AddItemToShoppingList(item, quantityToBeUpdated);
-//                UpdateItemCountInShoppingCart();
-//                UpdateShoppingCartValues();
-
                 var itemsAlreadyInCart = shoppingCartEntities.InMemoryShoppingCart.ItemList.Where(x => x.Id == itemId)
                     .ToList();
 
@@ -203,17 +195,6 @@ namespace ShoppingCartWebApi.Controllers
                     break;
             }
         }
-
-//        private void RemoveItemFromShoppingList(int itemId)
-//        {
-//            var start = shoppingCartEntities.InMemoryShoppingCart.ItemCount;
-//            for (var count = start - 1; count >= 0; count--)
-//            {
-//                var item = shoppingCartEntities.InMemoryShoppingCart.ItemList[count];
-//                if (item.Id == itemId)
-//                    shoppingCartEntities.InMemoryShoppingCart.ItemList.RemoveAt(count);
-//            }
-//        }
 
         private void UpdateItemCountInShoppingCart(int itemId)
         {
