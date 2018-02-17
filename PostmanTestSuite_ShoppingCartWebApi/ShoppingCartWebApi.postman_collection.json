@@ -1,0 +1,281 @@
+{
+	"info": {
+		"name": "ShoppingCartWebApi",
+		"_postman_id": "a2a8510e-c0d9-f048-de5b-20ca1c1f4217",
+		"description": "Tests for the ShoppingCartWebApi project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Same URL ItemId and Object ItemId: api/shoppingcart/10",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "97d7a3b4-bbba-4a3f-92e0-0ec0b3e4d603",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Id\":10,\n\t\"Name\":\"DummyItem1\",\n\t\"Description\":\"Dummy Item 1\",\n\t\"Value\":100.00,\n\t\"InventoryCount\":15\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/shoppingcart/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"shoppingcart",
+						"10"
+					]
+				},
+				"description": "Add an item of ItemId 10 to the shopping cart"
+			},
+			"response": []
+		},
+		{
+			"name": "Same URL ItemId and Object ItemId: api/shoppingcart/30",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "97d7a3b4-bbba-4a3f-92e0-0ec0b3e4d603",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Id\":30,\n\t\"Name\":\"DummyItem2\",\n\t\"Description\":\"Dummy Item 2\",\n\t\"Value\":50.00,\n\t\"InventoryCount\":10\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/shoppingcart/30",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"shoppingcart",
+						"30"
+					]
+				},
+				"description": "Add an item of ItemId 10 to the shopping cart"
+			},
+			"response": []
+		},
+		{
+			"name": "Diff URL ItemId and Object ItemId: api/shoppingcart/10",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "97d7a3b4-bbba-4a3f-92e0-0ec0b3e4d603",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Id\":10,\n\t\"Name\":\"DummyItem1\",\n\t\"Description\":\"Dummy Item 1\",\n\t\"Value\":100.00,\n\t\"InventoryCount\":15\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/shoppingcart/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"shoppingcart",
+						"100"
+					]
+				},
+				"description": "When the the ItemId in the URL and the object in the body is different, a 400 error is returned"
+			},
+			"response": []
+		},
+		{
+			"name": "Valid ItemId: api/shoppingcart/10/3",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:5000/api/shoppingcart/10/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"shoppingcart",
+						"10",
+						"3"
+					]
+				},
+				"description": "Update the quantity of an item in the ItemCountMap of a Shopping cart\nExecute after the POST call has been executed so that the in memory Shopping Cart has data in it."
+			},
+			"response": []
+		},
+		{
+			"name": "Invalid ItemId: api/shoppingcart/100/5",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:5000/api/shoppingcart/100/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"shoppingcart",
+						"100",
+						"3"
+					]
+				},
+				"description": "If the ItemId doesnt exist in the Item list then a 400 error is returned"
+			},
+			"response": []
+		},
+		{
+			"name": "Valid ItemId: api/shoppingcart/30",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:5000/api/shoppingcart/30",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"shoppingcart",
+						"30"
+					]
+				},
+				"description": "Deletes all items from the shopping cart that match the ItemId.\nExecute after the POST and PUT calls have been executed so that the in memory Shopping Cart has data in it."
+			},
+			"response": []
+		},
+		{
+			"name": "Invalid ItemId: api/shoppingcart/50",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:5000/api/shoppingcart/50",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"shoppingcart",
+						"50"
+					]
+				},
+				"description": "If the ItemId doesnt exist in the Item list then a 400 error is returned"
+			},
+			"response": []
+		},
+		{
+			"name": "Empty Shopping Cart: api/shoppingcart",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:5000/api/shoppingcart/30",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"shoppingcart",
+						"30"
+					]
+				},
+				"description": "Deletes all items from the shopping cart.\nExecute after the POST and PUT calls have been executed so that the in memory Shopping Cart has data in it."
+			},
+			"response": []
+		}
+	]
+}
