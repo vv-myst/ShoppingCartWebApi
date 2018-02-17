@@ -1,0 +1,180 @@
+#%RAML 1.0
+title: "ShoppingCartApiDefinition"
+description: "\n\n"
+version: "0.0.1"
+mediaType:
+- "application/json"
+types:
+  Item:
+    type: "object"
+    description: "an item available on the e-commerce website"
+    properties:
+      Id:
+        type: "integer"
+        format: "int64"
+        description: "Inventory id of the item"
+        minimum: 1
+        example: 234521344
+      Name:
+        type: "string"
+        description: "Name of the item"
+        minLength: 1
+        maxLength: 128
+        example: "Designer shoes Model Y"
+      Description:
+        type: "string"
+        description: "A short description about the item"
+        required: false
+      Value:
+        type: "number"
+        format: "double"
+        description: "Cost of the item (in EUR)"
+        minimum: 0.01
+        example: 234.99
+      InventoryCount:
+        type: "integer"
+        format: "int64"
+        description: "Quantity of items in the inventory"
+        example: 35
+    example:
+      value: "{\n  \"Id\":1234533,\n  \"Name\":\"Designer Shoes Model Y\",\n  \"Description\"\
+        :\"A pair of nice fancy shoes\",\n  \"Value\":234.00,\n  \"InventoryCount\"\
+        :200\n}"
+      strict: false
+  ShoppingCart:
+    type: "object"
+    description: "a collection of various items ready for purchase"
+    properties:
+      ItemList:
+        type: "array"
+        description: "A list of all the items present in the shopping cart"
+        items:
+          type: "object"
+        example:
+          value: "[\n  {\n  \"Id\":1234533,\n  \"Name\":\"Designer Shoes Model Y\"\
+            ,\n  \"Description\":\"A pair of nice fancy shoes\",\n  \"Value\":234.00,\n\
+            \  \"InventoryCount\":200\n  },\n  {\n  \"Id\":1234533,\n  \"Name\":\"\
+            Designer Shoes Model Y\",\n  \"Description\":\"A pair of nice fancy shoes\"\
+            ,\n  \"Value\":234.00,\n  \"InventoryCount\":200\n  },\n  {\n  \"Id\"\
+            :1367883,\n  \"Name\":\"Spring Collection Top 23\",\n  \"Description\"\
+            :\"A fancy new tank top from Spring collection 2017\",\n  \"Value\":150.00,\n\
+            \  \"InventoryCount\":50\n  }\n]"
+          strict: false
+      ItemCount:
+        type: "integer"
+        format: "int8"
+        description: "Total number of items in the shopping cart"
+        example: 3
+      TotalCost:
+        type: "number"
+        format: "double"
+        description: "Sum total of all the items in the shopping cart"
+        example: 618
+    example:
+      value: "{\n  \"ItemList\":[{\"Id\":1234533, \"Name\":\"Designer Shoes Model\
+        \ Y\", \"Description\":\"A pair of nice fancy shoes\", \"Value\":234.00, \"\
+        InventoryCount\":200}, {\"Id\":1234533, \"Name\":\"Designer Shoes Model Y\"\
+        , \"Description\":\"A pair of nice fancy shoes\", \"Value\":234.00, \"InventoryCount\"\
+        :200}, {\"Id\":1367883, \"Name\":\"Spring Collection Top 23\", \"Description\"\
+        :\"A fancy new tank top from Spring collection 2017\", \"Value\":150.00, \"\
+        InventoryCount\":50}],\n  \"ItemCount\":3,\n  \"TotalCost\":618.00\n}"
+      strict: false
+/shoppingcart:
+  delete:
+    displayName: "Delete all items"
+    description: "Delete all the items in the shopping cart"
+    responses:
+      200:
+        description: "Shopping cart is empty"
+        body:
+          application/json:
+            type: "ShoppingCart"
+            description: "returns the shopping cart object with the latest changes\
+              \ reflected"
+            example:
+              value: "{\n  \"ItemList\":[],\n  \"ItemCount\":0,\n  \"TotalCost\":0\n\
+                }\n\n"
+              strict: false
+      400:
+        description: "Request not completed"
+/shoppingcart/{itemid}:
+  uriParameters:
+    itemid:
+      type: "integer"
+      format: "int64"
+      minimum: 1
+      example: 12345677
+  post:
+    displayName: "Add new item"
+    description: "Add a new item to the shopping cart"
+    body:
+      application/json:
+        type: "Item"
+        example:
+          value: "{\n  \"Id\":1234533,\n  \"Name\":\"Designer Shoes Model Y\",\n \
+            \ \"Description\":\"A pair of nice fancy shoes\",\n  \"Value\":234.00,\n\
+            \  \"InventoryCount\":200\n}"
+          strict: false
+    responses:
+      200:
+        description: "Item successfully added to the Shopping Cart"
+        body:
+          application/json:
+            type: "ShoppingCart"
+            description: "returns the shopping cart object with the latest changes\
+              \ reflected"
+            example:
+              value: "{\n  \"ItemList\":[{\"Id\":1234533, \"Name\":\"Designer Shoes\
+                \ Model Y\", \"Description\":\"A pair of nice fancy shoes\", \"Value\"\
+                :234.00, \"InventoryCount\":200}],\n  \"ItemCount\":1,\n  \"TotalCost\"\
+                :234.00\n}\n\n"
+              strict: false
+      400:
+        description: "Request not completed"
+  put:
+    displayName: "Update item count"
+    description: "Update the item count of a particular item in the shopping cart"
+    queryParameters:
+      ItemCount:
+        type: "integer"
+        format: "int8"
+        description: "The new item count of a particular item in the shopping cart"
+        minimum: 1
+        example: 4
+    responses:
+      200:
+        description: "Item count successfully updated"
+        body:
+          application/json:
+            type: "ShoppingCart"
+            description: "returns the shopping cart object with the latest changes\
+              \ reflected"
+            example:
+              value: "{\n  \"ItemList\":[{\"Id\":1234533, \"Name\":\"Designer Shoes\
+                \ Model Y\", \"Description\":\"A pair of nice fancy shoes\", \"Value\"\
+                :234.00, \"InventoryCount\":200}, {\"Id\":1234533, \"Name\":\"Designer\
+                \ Shoes Model Y\", \"Description\":\"A pair of nice fancy shoes\"\
+                , \"Value\":234.00, \"InventoryCount\":200}],\n  \"ItemCount\":2,\n\
+                \  \"TotalCost\":468.00\n}\n\n"
+              strict: false
+      400:
+        description: "Request not completed"
+  delete:
+    displayName: "Delete an item"
+    description: "Delete a specific item from the shopping cart"
+    responses:
+      200:
+        description: "Item successfully removed from the shopping cart"
+        body:
+          application/json:
+            type: "ShoppingCart"
+            description: "returns the shopping cart object with the latest changes\
+              \ reflected"
+            example:
+              value: "{\n {\"Id\":1367883, \"Name\":\"Spring Collection Top 23\",\
+                \ \"Description\":\"A fancy new tank top from Spring collection 2017\"\
+                , \"Value\":150.00, \"InventoryCount\":50}],\n  \"ItemCount\":1,\n\
+                \  \"TotalCost\":150.00\n}\n\n"
+              strict: false
+      400:
+        description: "Request not completed"

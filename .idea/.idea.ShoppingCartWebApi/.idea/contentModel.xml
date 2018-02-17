@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\BILA007\RiderProjects\ShoppingCartWebApi" t="IncludeRecursive">
+      <e p=".gitignore" t="Include" />
+      <e p="API References" t="Include">
+        <e p="shoppingcart_apidefintion.raml" t="Include" />
+      </e>
+      <e p="appsettings.Development.json" t="Include" />
+      <e p="appsettings.json" t="Include" />
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="Contracts" t="Include">
+        <e p="IEmptyShoppingCartController.cs" t="Include" />
+        <e p="IShoppingCartController.cs" t="Include" />
+      </e>
+      <e p="Controllers" t="Include">
+        <e p="EmptyShoppingCartController.cs" t="Include" />
+        <e p="HttpErrors" t="Include">
+          <e p="HttpErrorResults.cs" t="Include" />
+        </e>
+        <e p="ShoppingCartController.cs" t="Include" />
+      </e>
+      <e p="Models" t="Include">
+        <e p="Extensions" t="Include">
+          <e p="ShoppingCartExtensions.cs" t="Include" />
+        </e>
+        <e p="Interfaces" t="Include">
+          <e p="IShoppingCart.cs" t="Include" />
+        </e>
+        <e p="Item.cs" t="Include" />
+        <e p="ShoppingCart.cs" t="Include" />
+      </e>
+      <e p="obj" t="ExcludeRecursive">
+        <e p="Debug" t="Include">
+          <e p="netcoreapp2.0" t="Include">
+            <e p="ShoppingCartWebApi.AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive">
+        <e p="NUnit.3.5.0" t="Include">
+          <e p="CHANGES.txt" t="Include" />
+          <e p="lib" t="Include">
+            <e p="dotnet" t="Include">
+              <e p="nunit.framework.dll" t="Include" />
+              <e p="nunit.framework.xml" t="Include" />
+            </e>
+            <e p="net20" t="Include">
+              <e p="nunit.framework.dll" t="Include" />
+              <e p="nunit.framework.xml" t="Include" />
+              <e p="NUnit.System.Linq.dll" t="Include" />
+            </e>
+            <e p="net35" t="Include">
+              <e p="nunit.framework.dll" t="Include" />
+              <e p="nunit.framework.xml" t="Include" />
+            </e>
+            <e p="net40" t="Include">
+              <e p="nunit.framework.dll" t="Include" />
+              <e p="nunit.framework.xml" t="Include" />
+            </e>
+            <e p="net45" t="Include">
+              <e p="nunit.framework.dll" t="Include" />
+              <e p="nunit.framework.xml" t="Include" />
+            </e>
+            <e p="portable-net45+win8+wp8+wpa81+Xamarin.Mac+MonoAndroid10+MonoTouch10+Xamarin.iOS10" t="Include">
+              <e p="nunit.framework.dll" t="Include" />
+              <e p="nunit.framework.xml" t="Include" />
+            </e>
+          </e>
+          <e p="LICENSE.txt" t="Include" />
+          <e p="NOTICES.txt" t="Include" />
+          <e p="NUnit.3.5.0.nupkg" t="Include" />
+        </e>
+      </e>
+      <e p="Program.cs" t="Include" />
+      <e p="ShoppingCartEntities.cs" t="Include" />
+      <e p="ShoppingCartWebApi.csproj" t="IncludeRecursive" />
+      <e p="ShoppingCartWebApi.sln" t="IncludeFlat" />
+      <e p="Startup.cs" t="Include" />
+      <e p="wwwroot" t="Include" />
+    </e>
+    <e p="C:\Users\mypc_BILA007\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_ShoppingCartWebApi.-261573324.00" t="ExcludeRecursive" />
+  </component>
+</project>
