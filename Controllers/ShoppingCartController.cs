@@ -35,7 +35,7 @@ namespace ShoppingCartWebApi.Controllers
         /// <param name="item"></param>
         /// <param name="itemId"></param>
         /// <returns></returns>
-        [HttpPost("{itemid")]
+        [HttpPost("{itemid}")]
         public async Task<IActionResult> Post([FromBody] Item item, int itemId)
         {
             if (item.Id != itemId)

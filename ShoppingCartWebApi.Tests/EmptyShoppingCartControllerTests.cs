@@ -13,14 +13,14 @@ namespace ShoppingCartWebApiTests
     public class EmptyShoppingCartControllerTests
     {
         [SetUp]
-        public void Init()
+        public async Task Init()
         {
             mockItem1 = new Mock<Item>(100, "Dummy Item 1", 100.00M, 10, "Dummy Item 1").Object;
             mockItem2 = new Mock<Item>(200, "Dummy Item 2", 50.00M, 20, "Dummy Item 2").Object;
             mockShoppingCartEntities = new Mock<ShoppingCartEntities>().Object;
             shoppingCartController = new ShoppingCartController(mockShoppingCartEntities);
             emptyShoppingCartController = new EmptyShoppingCartController(mockShoppingCartEntities);
-            AddMockItems();
+            await AddMockItems();
         }
         
         private Item mockItem1;
