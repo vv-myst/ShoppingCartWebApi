@@ -36,8 +36,11 @@ namespace ShoppingCartWebApi.Controllers
         /// <param name="itemId"></param>
         /// <returns></returns>
         [HttpPost("{itemid")]
-        public async Task<IActionResult> Post(Item item, int itemId)
+        public async Task<IActionResult> Post([FromBody] Item item, int itemId)
         {
+            if (item.Id != itemId)
+                return item.ErrorItemIdsDoNotMatch(itemId);
+                
             await Task.Run(() =>
             {
                 AddItemToShoppingList(item);
