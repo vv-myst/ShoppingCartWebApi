@@ -164,5 +164,25 @@ namespace ShoppingCartWebApiTests
             Assert.That(result.StatusCode, Is.EqualTo((int) HttpStatusCode.BadRequest));
             Assert.That(resultString, Is.EqualTo(actualErrorMsg));
         }
+        
+        [Test]
+        public async Task Delete_RemoveAllItems_ClearsShoppingCart()
+        {
+            await shoppingCartController.Post(mockItem1, mockItem1.Id);
+            await shoppingCartController.Post(mockItem1, mockItem1.Id);
+            await shoppingCartController.Post(mockItem2, mockItem2.Id);
+//            var result = (ObjectResult) await emptyShoppingCartController.Delete();
+            var result = (ObjectResult) await shoppingCartController.Delete();
+            var resultCart = result.Value as ShoppingCart;
+            
+            //Test in memory shopping cart 
+            Assert.That(resultCart.ItemCount, Is.EqualTo(0));
+            Assert.That(resultCart.ItemList, Is.Empty);
+            Assert.That(resultCart.TotalValue, Is.EqualTo(0.00M));
+            Assert.That(resultCart.ItemCountMap, Is.Empty);
+
+            //Test api response
+            Assert.That(result.StatusCode, Is.EqualTo((int) HttpStatusCode.OK));
+        }
     }
 }

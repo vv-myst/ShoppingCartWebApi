@@ -37,5 +37,11 @@ namespace ShoppingCartWebApi.Contracts
         /// <param name="itemId"></param>
         /// <returns></returns>
         Task<IActionResult> Delete(int itemId);
+        
+        /// <summary>
+        ///     Delete all the items in the shopping cart
+        /// </summary>
+        /// <returns></returns>
+        Task<IActionResult> Delete();
     }
 }

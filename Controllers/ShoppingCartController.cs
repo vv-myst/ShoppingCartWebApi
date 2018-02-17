@@ -53,6 +53,21 @@ namespace ShoppingCartWebApi.Controllers
                 StatusCode = (int)HttpStatusCode.OK
             };
         }
+        
+        private void AddItemToShoppingList(Item item)
+        {
+            shoppingCartEntities.InMemoryShoppingCart.ItemList.Add(item);
+        }
+        
+        private void UpdateItemCountInShoppingCart()
+        {
+            shoppingCartEntities.InMemoryShoppingCart.UpdateItemCountMapUponAdd();
+        }
+        
+        private void UpdateShoppingCartValues()
+        {
+            shoppingCartEntities.InMemoryShoppingCart.UpdateShoppingCart();
+        }
 
         /// <inheritdoc />
         /// <summary>
@@ -62,7 +77,7 @@ namespace ShoppingCartWebApi.Controllers
         /// <param name="itemId"></param>
         /// <param name="itemCount"></param>
         /// <returns></returns>
-        [HttpPut("{itemid}")]
+        [HttpPut("{itemid}/{itemcount}")]
         public async Task<IActionResult> Put(int itemId, [FromQuery] int itemCount)
         {
             if (!DoesItemExist(itemId))
@@ -83,6 +98,17 @@ namespace ShoppingCartWebApi.Controllers
             {
                 StatusCode = (int) HttpStatusCode.OK
             };
+        }
+        
+        private bool DoesItemExist(int itemId)
+        {
+            return shoppingCartEntities.InMemoryShoppingCart.ItemList.FirstOrDefault(x => x.Id == itemId) != null;
+        }
+        
+        private void AddItemToShoppingList(Item item, int quantity)
+        {
+            for (var count = 0; count < quantity; count++)
+                shoppingCartEntities.InMemoryShoppingCart.ItemList.Add(item);
         }
 
         /// <inheritdoc />
@@ -111,32 +137,6 @@ namespace ShoppingCartWebApi.Controllers
             };
         }
 
-        private void AddItemToShoppingList(Item item)
-        {
-            shoppingCartEntities.InMemoryShoppingCart.ItemList.Add(item);
-        }
-
-        private void AddItemToShoppingList(Item item, int quantity)
-        {
-            for (var count = 0; count < quantity; count++)
-                shoppingCartEntities.InMemoryShoppingCart.ItemList.Add(item);
-        }
-
-        private void UpdateItemCountInShoppingCart()
-        {
-            shoppingCartEntities.InMemoryShoppingCart.UpdateItemCountMapUponAdd();
-        }
-
-        private void UpdateShoppingCartValues()
-        {
-            shoppingCartEntities.InMemoryShoppingCart.UpdateShoppingCart();
-        }
-
-        private bool DoesItemExist(int itemId)
-        {
-            return shoppingCartEntities.InMemoryShoppingCart.ItemList.FirstOrDefault(x => x.Id == itemId) != null;
-        }
-
         private void RemoveItemFromShoppingList(int itemId)
         {
             var start = shoppingCartEntities.InMemoryShoppingCart.ItemCount;
@@ -151,6 +151,37 @@ namespace ShoppingCartWebApi.Controllers
         private void UpdateItemCountInShoppingCart(int itemId)
         {
             shoppingCartEntities.InMemoryShoppingCart.UpdateItemCountMapUponDelete(itemId);
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        ///     Delete all the items in the shopping cart
+        /// </summary>
+        /// <returns></returns>
+        [HttpDelete]
+        public async Task<IActionResult> Delete()
+        {
+            await Task.Run(() =>
+            {
+                RemoveAllItemFromShoppingCart();
+                ClearItemCountInShoppingCart();
+                UpdateShoppingCartValues();
+            });
+            
+            return new ObjectResult(shoppingCartEntities.InMemoryShoppingCart)
+            {
+                StatusCode = (int) HttpStatusCode.OK
+            };
+        }
+        
+        private void RemoveAllItemFromShoppingCart()
+        {
+            shoppingCartEntities.InMemoryShoppingCart.ItemList.Clear();   
+        }
+
+        private void ClearItemCountInShoppingCart()
+        {
+            shoppingCartEntities.InMemoryShoppingCart.ClearItemCountMap();
         }
     }
 }
