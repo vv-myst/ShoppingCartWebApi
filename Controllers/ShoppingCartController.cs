@@ -63,7 +63,7 @@ namespace ShoppingCartWebApi.Controllers
         /// <param name="itemCount"></param>
         /// <returns></returns>
         [HttpPut("{itemid}/{itemcount}")]
-        public async Task<IActionResult> Put(int itemId, [FromQuery] int itemCount)
+        public async Task<IActionResult> Put(int itemId, int itemCount)
         {
             if (!DoesItemExist(itemId))
                 return itemId.ErrorNoItemFound();
