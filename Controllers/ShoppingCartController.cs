@@ -40,7 +40,7 @@ namespace ShoppingCartWebApi.Controllers
         {
             if (item.Id != itemId)
                 return item.ErrorItemIdsDoNotMatch(itemId);
-                
+
             await Task.Run(() =>
             {
                 AddItemToShoppingList(item);
@@ -50,23 +50,8 @@ namespace ShoppingCartWebApi.Controllers
 
             return new ObjectResult(shoppingCartEntities.InMemoryShoppingCart)
             {
-                StatusCode = (int)HttpStatusCode.OK
+                StatusCode = (int) HttpStatusCode.OK
             };
-        }
-        
-        private void AddItemToShoppingList(Item item)
-        {
-            shoppingCartEntities.InMemoryShoppingCart.ItemList.Add(item);
-        }
-        
-        private void UpdateItemCountInShoppingCart()
-        {
-            shoppingCartEntities.InMemoryShoppingCart.UpdateItemCountMapUponAdd();
-        }
-        
-        private void UpdateShoppingCartValues()
-        {
-            shoppingCartEntities.InMemoryShoppingCart.UpdateShoppingCart();
         }
 
         /// <inheritdoc />
@@ -85,12 +70,31 @@ namespace ShoppingCartWebApi.Controllers
 
             await Task.Run(() =>
             {
+//                var itemsAlreadyInCart = shoppingCartEntities.InMemoryShoppingCart.ItemList.Where(x => x.Id == itemId)
+//                    .ToList();
+//                var item = itemsAlreadyInCart.FirstOrDefault(x => x.Id == itemId);
+//                var quantityToBeUpdated = itemCount - itemsAlreadyInCart.Count;
+//                AddItemToShoppingList(item, quantityToBeUpdated);
+//                UpdateItemCountInShoppingCart();
+//                UpdateShoppingCartValues();
+
                 var itemsAlreadyInCart = shoppingCartEntities.InMemoryShoppingCart.ItemList.Where(x => x.Id == itemId)
                     .ToList();
-                var item = itemsAlreadyInCart.FirstOrDefault(x => x.Id == itemId);
-                var quantityToBeUpdated = itemCount - itemsAlreadyInCart.Count;
-                AddItemToShoppingList(item, quantityToBeUpdated);
-                UpdateItemCountInShoppingCart();
+
+                if (itemCount < itemsAlreadyInCart.Count)
+                {
+                    var numberOfItemsToDelete = itemsAlreadyInCart.Count - itemCount;
+                    RemoveItemFromShoppingList(itemId, numberOfItemsToDelete);
+                    ReduceCountInItemCountMap(itemId, numberOfItemsToDelete);
+                }
+                else
+                {
+                    var quantityToBeUpdated = itemCount - itemsAlreadyInCart.Count;
+                    var item = itemsAlreadyInCart.FirstOrDefault(x => x.Id == itemId);
+                    AddItemToShoppingList(item, quantityToBeUpdated);
+                    UpdateItemCountInShoppingCart();
+                }
+
                 UpdateShoppingCartValues();
             });
 
@@ -100,15 +104,13 @@ namespace ShoppingCartWebApi.Controllers
             };
         }
         
-        private bool DoesItemExist(int itemId)
+        private void ReduceCountInItemCountMap( int itemId,
+            int numberOfItemsToDelete)
         {
-            return shoppingCartEntities.InMemoryShoppingCart.ItemList.FirstOrDefault(x => x.Id == itemId) != null;
-        }
-        
-        private void AddItemToShoppingList(Item item, int quantity)
-        {
-            for (var count = 0; count < quantity; count++)
-                shoppingCartEntities.InMemoryShoppingCart.ItemList.Add(item);
+            if(shoppingCartEntities.InMemoryShoppingCart.ItemList.Count == 0)
+                shoppingCartEntities.InMemoryShoppingCart.ItemCountMap.Clear();
+            else
+                shoppingCartEntities.InMemoryShoppingCart.ItemCountMap[itemId] -= numberOfItemsToDelete;
         }
 
         /// <inheritdoc />
@@ -126,7 +128,8 @@ namespace ShoppingCartWebApi.Controllers
 
             await Task.Run(() =>
             {
-                RemoveItemFromShoppingList(itemId);
+                var itemCount = shoppingCartEntities.InMemoryShoppingCart.ItemCountMap[itemId];
+                RemoveItemFromShoppingList(itemId, itemCount);
                 UpdateItemCountInShoppingCart(itemId);
                 UpdateShoppingCartValues();
             });
@@ -135,22 +138,6 @@ namespace ShoppingCartWebApi.Controllers
             {
                 StatusCode = (int) HttpStatusCode.OK
             };
-        }
-
-        private void RemoveItemFromShoppingList(int itemId)
-        {
-            var start = shoppingCartEntities.InMemoryShoppingCart.ItemCount;
-            for (var count = start - 1; count >= 0; count--)
-            {
-                var item = shoppingCartEntities.InMemoryShoppingCart.ItemList[count];
-                if (item.Id == itemId)
-                    shoppingCartEntities.InMemoryShoppingCart.ItemList.RemoveAt(count);
-            }
-        }
-
-        private void UpdateItemCountInShoppingCart(int itemId)
-        {
-            shoppingCartEntities.InMemoryShoppingCart.UpdateItemCountMapUponDelete(itemId);
         }
 
         /// <inheritdoc />
@@ -167,16 +154,75 @@ namespace ShoppingCartWebApi.Controllers
                 ClearItemCountInShoppingCart();
                 UpdateShoppingCartValues();
             });
-            
+
             return new ObjectResult(shoppingCartEntities.InMemoryShoppingCart)
             {
                 StatusCode = (int) HttpStatusCode.OK
             };
         }
-        
+
+        private void AddItemToShoppingList(Item item)
+        {
+            shoppingCartEntities.InMemoryShoppingCart.ItemList.Add(item);
+        }
+
+        private void UpdateItemCountInShoppingCart()
+        {
+            shoppingCartEntities.InMemoryShoppingCart.UpdateItemCountMapUponAdd();
+        }
+
+        private void UpdateShoppingCartValues()
+        {
+            shoppingCartEntities.InMemoryShoppingCart.UpdateShoppingCart();
+        }
+
+        private bool DoesItemExist(int itemId)
+        {
+            return shoppingCartEntities.InMemoryShoppingCart.ItemList.FirstOrDefault(x => x.Id == itemId) != null;
+        }
+
+        private void AddItemToShoppingList(Item item, int quantity)
+        {
+            for (var count = 0; count < quantity; count++)
+                shoppingCartEntities.InMemoryShoppingCart.ItemList.Add(item);
+        }
+
+        private void RemoveItemFromShoppingList(int itemId, int numberOfItemsToDelete)
+        {
+            var start = shoppingCartEntities.InMemoryShoppingCart.ItemCount;
+            var deletedItemCount = 0;
+            for (var count = start - 1; count >= 0; count--)
+            {
+                var item = shoppingCartEntities.InMemoryShoppingCart.ItemList[count];
+                if (item.Id != itemId)
+                    continue;
+
+                shoppingCartEntities.InMemoryShoppingCart.ItemList.RemoveAt(count);
+                deletedItemCount++;
+                if (deletedItemCount == numberOfItemsToDelete)
+                    break;
+            }
+        }
+
+//        private void RemoveItemFromShoppingList(int itemId)
+//        {
+//            var start = shoppingCartEntities.InMemoryShoppingCart.ItemCount;
+//            for (var count = start - 1; count >= 0; count--)
+//            {
+//                var item = shoppingCartEntities.InMemoryShoppingCart.ItemList[count];
+//                if (item.Id == itemId)
+//                    shoppingCartEntities.InMemoryShoppingCart.ItemList.RemoveAt(count);
+//            }
+//        }
+
+        private void UpdateItemCountInShoppingCart(int itemId)
+        {
+            shoppingCartEntities.InMemoryShoppingCart.UpdateItemCountMapUponDelete(itemId);
+        }
+
         private void RemoveAllItemFromShoppingCart()
         {
-            shoppingCartEntities.InMemoryShoppingCart.ItemList.Clear();   
+            shoppingCartEntities.InMemoryShoppingCart.ItemList.Clear();
         }
 
         private void ClearItemCountInShoppingCart()

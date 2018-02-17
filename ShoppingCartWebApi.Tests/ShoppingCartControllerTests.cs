@@ -101,7 +101,7 @@ namespace ShoppingCartWebApiTests
         }
         
         [TestCase(5)]
-        public async Task Put_UpdateItemQuantity_UpdatesItemCountMapAndAddsToItemList(int itemCount)
+        public async Task Put_IncreaseItemQuantity_UpdatesItemCountMapAndAddsToItemList(int itemCount)
         {
             await shoppingCartController.Post(mockItem1, mockItem1.Id);
             await shoppingCartController.Post(mockItem1, mockItem1.Id);
@@ -110,9 +110,27 @@ namespace ShoppingCartWebApiTests
 
             //Test in memory shopping cart 
             Assert.That(resultCart.ItemCount, Is.EqualTo(5));
-            Assert.That(resultCart.ItemList.Count, Is.EqualTo(5));
+           Assert.That(resultCart.ItemList.Count, Is.EqualTo(5));
             Assert.That(resultCart.TotalValue, Is.EqualTo(500.00M));
             Assert.That(resultCart.ItemCountMap[mockItem1.Id], Is.EqualTo(5));
+
+            //Test api response
+            Assert.That(result.StatusCode, Is.EqualTo((int) HttpStatusCode.OK));
+        }
+        
+        [TestCase(7, 3)]
+        public async Task Put_DecreaseItemQuantity_UpdatesItemCountMapAndAddsToItemList(int increasedItemCount, int reducedItemCount)
+        {
+            await shoppingCartController.Post(mockItem1, mockItem1.Id);
+            await shoppingCartController.Put(mockItem1.Id, increasedItemCount);
+            var result = (ObjectResult) await shoppingCartController.Put(mockItem1.Id, reducedItemCount);
+            var resultCart = result.Value as ShoppingCart;
+
+            //Test in memory shopping cart 
+            Assert.That(resultCart.ItemCount, Is.EqualTo(3));
+            Assert.That(resultCart.ItemList.Count, Is.EqualTo(3));
+            Assert.That(resultCart.TotalValue, Is.EqualTo(300.00M));
+            Assert.That(resultCart.ItemCountMap[mockItem1.Id], Is.EqualTo(3));
 
             //Test api response
             Assert.That(result.StatusCode, Is.EqualTo((int) HttpStatusCode.OK));
