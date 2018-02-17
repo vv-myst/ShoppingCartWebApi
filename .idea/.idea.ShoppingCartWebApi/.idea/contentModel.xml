@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\BILA007\RiderProjects\ShoppingCartWebApi" t="IncludeRecursive">
+      <e p=" - Copy.gitignore" t="Include" />
+      <e p=".gitattributes" t="Include" />
       <e p=".gitignore" t="Include" />
       <e p="API References" t="Include">
         <e p="shoppingcart_apidefintion.raml" t="Include" />
