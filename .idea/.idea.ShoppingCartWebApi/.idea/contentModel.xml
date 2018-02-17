@@ -61,6 +61,9 @@
           </e>
         </e>
       </e>
+      <e p="PostmanTestSuite_ShoppingCartWebApi" t="Include">
+        <e p="ShoppingCartWebApi.postman_collection.json" t="Include" />
+      </e>
       <e p="Program.cs" t="Include" />
       <e p="ShoppingCartEntities.cs" t="Include" />
       <e p="ShoppingCartWebApi.csproj" t="IncludeRecursive" />
