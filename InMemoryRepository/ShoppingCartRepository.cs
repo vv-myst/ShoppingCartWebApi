@@ -17,18 +17,18 @@ namespace ShoppingCartWebApi.InMemoryRepository
         /// </summary>
         public ShoppingCart InMemoryShoppingCart { get; }
 
+
         /// <inheritdoc />
         /// <summary>
-        ///     Update an existing entry in the repository
+        ///     Update the shopping cart values
         /// </summary>
-        /// <param name="entity"></param>
-        /// <returns></returns>
-        public void Update(ShoppingCart entity)
+        /// <param name="shoppingCart">Shopping cart entity</param>
+        public void Update(ShoppingCart shoppingCart)
         {
-            InMemoryShoppingCart.ItemCount = entity.ItemCount;
-            InMemoryShoppingCart.TotalValue = entity.TotalValue;
-            InMemoryShoppingCart.ItemList = entity.ItemList;
-            InMemoryShoppingCart.ItemCountMap = entity.ItemCountMap;
+            InMemoryShoppingCart.ItemCount = shoppingCart.ItemCount;
+            InMemoryShoppingCart.TotalValue = shoppingCart.TotalValue;
+            InMemoryShoppingCart.ItemList = shoppingCart.ItemList;
+            InMemoryShoppingCart.ItemCountMap = shoppingCart.ItemCountMap;
         }
     }
 }

@@ -10,19 +10,15 @@ using ShoppingCartWebApi.Models.Interfaces;
 namespace ShoppingCartWebApiTests
 {
     [TestFixture]
-    public class ShoppingCartHandlerTests
+    public class ShoppingCartHandlerTests : TestSetup
     {
         [SetUp]
         public void Init()
         {
-            mockItem1 = new Mock<Item>(100, "Dummy Item 1", 100.00M, 10, "Dummy Item 1").Object;
-            mockItem2 = new Mock<Item>(200, "Dummy Item 2", 50.00M, 20, "Dummy Item 2").Object;
             mockShoppingCartRepository = new Mock<ShoppingCartRepository>().Object;
             mockShoppingCartHandler = new Mock<ShoppingCartHandler>(mockShoppingCartRepository).Object;
         }
 
-        private Item mockItem1;
-        private Item mockItem2;
         private IShoppingCartRepository mockShoppingCartRepository;
         private IShoppingCartHandler mockShoppingCartHandler;
 

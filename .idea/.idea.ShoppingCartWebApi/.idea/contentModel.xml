@@ -98,6 +98,7 @@
         <e p="ShoppingCartHandlerTests.cs" t="Include" />
         <e p="ShoppingCartRepositoryTests.cs" t="Include" />
         <e p="ShoppingCartWebApiTests.csproj" t="IncludeRecursive" />
+        <e p="TestSetup.cs" t="Include" />
       </e>
       <e p="Startup.cs" t="Include" />
       <e p="wwwroot" t="Include" />

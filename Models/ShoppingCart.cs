@@ -5,14 +5,6 @@ namespace ShoppingCartWebApi.Models
 {
     public class ShoppingCart
     {
-        public ShoppingCart()
-        {
-            ItemList = new List<Item>();
-            ItemCountMap = new Dictionary<int, int>();
-            ItemCount = 0;
-            TotalValue = 0.00M;
-        }
-
         public ShoppingCart(IList<Item> itemList)
         {
             ItemList = itemList;

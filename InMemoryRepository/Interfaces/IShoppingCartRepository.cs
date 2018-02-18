@@ -10,10 +10,9 @@ namespace ShoppingCartWebApi.InMemoryRepository.Interfaces
         ShoppingCart InMemoryShoppingCart { get; }
 
         /// <summary>
-        ///     Update an existing entry in the repository
+        ///     Update the shopping cart values
         /// </summary>
-        /// <param name="entity"></param>
-        /// <returns></returns>
-        void Update(ShoppingCart entity);
+        /// <param name="shoppingCart">Shopping cart entity</param>
+        void Update(ShoppingCart shoppingCart);
     }
 }

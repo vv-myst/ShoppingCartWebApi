@@ -15,11 +15,11 @@ namespace ShoppingCartWebApi.Models.Handlers
         }
 
         /// <inheritdoc />
-        /// <summary>
+        //// <summary>
         ///     Check if an item with the specific itemId exists in the shopping cart
         /// </summary>
-        /// <param name="shoppingCart"></param>
-        /// <param name="itemId"></param>
+        /// <param name="shoppingCart">Shopping cart entity</param>
+        /// <param name="itemId">ItemId of the item to be matched</param>
         /// <returns></returns>
         public bool DoesItemExist(ShoppingCart shoppingCart, int itemId)
         {
@@ -30,8 +30,8 @@ namespace ShoppingCartWebApi.Models.Handlers
         /// <summary>
         ///     Adds an item to the shopping cart
         /// </summary>
-        /// <param name="shoppingCart"></param>
-        /// <param name="item"></param>
+        /// <param name="shoppingCart">Shopping cart entity</param>
+        /// <param name="item">Item to be added</param>
         public void AddItemToShoppingCart(ShoppingCart shoppingCart, Item item)
         {
             AddItemToItemList(shoppingCart, item);
@@ -44,8 +44,8 @@ namespace ShoppingCartWebApi.Models.Handlers
         /// <summary>
         ///     Delete all items from the shopping cart for the given itemId
         /// </summary>
-        /// <param name="shoppingCart"></param>
-        /// <param name="itemId"></param>
+        /// <param name="shoppingCart">Shopping cart entity</param>
+        /// <param name="itemId">ItemId of the item to be deleted</param>
         public void DeleteItemsFromShoppingCart(ShoppingCart shoppingCart, int itemId)
         {
             var countOfItemInList = shoppingCart.ItemList.Count(item => item.Id == itemId);
@@ -62,9 +62,9 @@ namespace ShoppingCartWebApi.Models.Handlers
         /// <summary>
         ///     Update the quantity of items in the shopping cart for the given itemId
         /// </summary>
-        /// <param name="shoppingCart"></param>
-        /// <param name="itemId"></param>
-        /// <param name="itemCount"></param>
+        /// <param name="shoppingCart">Shopping cart entity</param>
+        /// <param name="itemId">ItemId of the item to be updated</param>
+        /// <param name="itemCount">Quantity of the item to be updated</param>
         public void UpdateItemQuantityInShoppingCart(ShoppingCart shoppingCart, int itemId, int itemCount)
         {
             var itemsAlreadyInCart = shoppingCart.ItemList.Where(x => x.Id == itemId)
@@ -92,7 +92,7 @@ namespace ShoppingCartWebApi.Models.Handlers
         /// <summary>
         ///     Remove all items from the shopping cart
         /// </summary>
-        /// <param name="shoppingCart"></param>
+        /// <param name="shoppingCart">Shopping cart entity</param>
         public void EmptyShoppingCart(ShoppingCart shoppingCart)
         {
             RemoveAllItemFromItemList(shoppingCart);

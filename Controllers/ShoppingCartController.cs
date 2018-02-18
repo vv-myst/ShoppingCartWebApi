@@ -28,9 +28,12 @@ namespace ShoppingCartWebApi.Controllers
         ///     Add a new item to the shopping cart
         ///     path - /shoppingcart/{itemId}
         /// </summary>
-        /// <param name="item"></param>
-        /// <param name="itemId"></param>
-        /// <returns></returns>
+        /// <param name="item">Item to be added to the shopping cart</param>
+        /// <param name="itemId">ItemId received in the request URL</param>
+        /// <returns>
+        ///     Returns Http ObjectResult with Status code 200 if success
+        ///     else returns an Http ObjectResult with Status code 400 
+        /// </returns>
         [HttpPost("{itemid}")]
         public async Task<IActionResult> Post([FromBody] Item item, int itemId)
         {
@@ -53,9 +56,11 @@ namespace ShoppingCartWebApi.Controllers
         ///     Update the item count of a particular item in the shopping cart
         ///     path - /shoppingcart/{itemId}
         /// </summary>
-        /// <param name="itemId"></param>
-        /// <param name="itemCount"></param>
-        /// <returns></returns>
+        /// <param name="itemId">ItemId received in the request URL</param>
+        /// <param name="itemCount">ItemCount received in the request URL</param>
+        ///     Returns Http ObjectResult with Status code 200 if success
+        ///     else returns an Http ObjectResult with Status code 400 
+        /// </returns>
         [HttpPut("{itemid}/{itemcount}")]
         public async Task<IActionResult> Put(int itemId, int itemCount)
         {
@@ -76,11 +81,14 @@ namespace ShoppingCartWebApi.Controllers
 
         /// <inheritdoc />
         /// <summary>
-        ///     Delete a specific item from the shopping cart
+        ///     Delete specific items from the shopping cart
         ///     path - /shoppingcart/{itemId}
         /// </summary>
-        /// <param name="itemId"></param>
-        /// <returns></returns>
+        /// <param name="itemId">ItemId received in the request URL</param>
+        /// <returns>
+        ///     Returns Http ObjectResult with Status code 200 if success
+        ///     else returns an Http ObjectResult with Status code 400 
+        /// </returns>
         [HttpDelete("{itemid}")]
         public async Task<IActionResult> Delete(int itemId)
         {
@@ -101,8 +109,11 @@ namespace ShoppingCartWebApi.Controllers
         /// <inheritdoc />
         /// <summary>
         ///     Delete all the items in the shopping cart
+        ///     path - /shoppingcart
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        ///     Returns Http ObjectResult with Status code 200
+        /// </returns>
         [HttpDelete]
         public async Task<IActionResult> Delete()
         {

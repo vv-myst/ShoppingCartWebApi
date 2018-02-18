@@ -22,9 +22,9 @@ namespace ShoppingCartWebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            var shoppinCartRepo = new ShoppingCartRepository();
-            services.AddSingleton<IShoppingCartRepository>(item => shoppinCartRepo);
-            services.AddScoped<IShoppingCartHandler>(item => new ShoppingCartHandler(shoppinCartRepo));
+            var shoppingCartRepository = new ShoppingCartRepository();
+            services.AddSingleton<IShoppingCartRepository>(item => shoppingCartRepository);
+            services.AddScoped<IShoppingCartHandler>(item => new ShoppingCartHandler(shoppingCartRepository));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
