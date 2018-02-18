@@ -71,6 +71,7 @@
         <e p="ShoppingCartWebApi.postman_collection.json" t="Include" />
       </e>
       <e p="Program.cs" t="Include" />
+      <e p="README.txt" t="Include" />
       <e p="ShoppingCartWebApi.csproj" t="IncludeRecursive" />
       <e p="ShoppingCartWebApi.sln" t="IncludeFlat" />
       <e p="ShoppingCartWebApi.Tests" t="IncludeRecursive">

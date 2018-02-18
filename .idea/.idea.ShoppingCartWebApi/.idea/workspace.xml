@@ -5,12 +5,7 @@
     <option name="CUSTOM_SCOPE_NAME" value="Current File" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c3c54dd-b760-47dd-8450-5411ab1536d6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ShoppingCartWebApi/.idea/contentModel.xml" afterPath="$PROJECT_DIR$/.idea/.idea.ShoppingCartWebApi/.idea/contentModel.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ShoppingCartWebApi/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.ShoppingCartWebApi/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ShoppingCartWebApi/riderModule.iml" afterPath="$PROJECT_DIR$/.idea/.idea.ShoppingCartWebApi/riderModule.iml" />
-      <change beforePath="$PROJECT_DIR$/ShoppingCartWebApi.Tests/ShoppingCartWebApiTests.csproj" afterPath="$PROJECT_DIR$/ShoppingCartWebApi.Tests/ShoppingCartWebApiTests.csproj" />
-    </list>
+    <list default="true" id="6c3c54dd-b760-47dd-8450-5411ab1536d6" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -199,6 +194,11 @@
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
               <item name="ShoppingCartWebApi (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="ShoppingCartWebApi (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="ShoppingCartWebApi" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -270,12 +270,12 @@
       <workItem from="1518867492593" duration="894000" />
       <workItem from="1518868442475" duration="6880000" />
       <workItem from="1518895815890" duration="5541000" />
-      <workItem from="1518948399103" duration="21919000" />
+      <workItem from="1518948399103" duration="22526000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58132000" />
+    <option name="totallyTimeSpent" value="58739000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -296,9 +296,9 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.49779493" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960325" sideWeight="0.55920345" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.49779493" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="NuGet" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960325" sideWeight="0.5844995" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960325" sideWeight="0.5844995" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Change Signature" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16684607" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16684607" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960325" sideWeight="0.41550055" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />

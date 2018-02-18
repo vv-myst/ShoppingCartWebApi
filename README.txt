@@ -21,7 +21,7 @@ IDE					: Rider by JetBrains (https://www.jetbrains.com/rider/)
 Package Manager		: NuGet (https://www.nuget.org/)
 Unit Tests			: NUnit v3.9.0 (http://nunit.org/)
 Mocking Framework	: Moq v4.8.1 (https://github.com/moq)
-
+Version Control		: Git
 
 
 ---------------------------------------------------------------------------------
