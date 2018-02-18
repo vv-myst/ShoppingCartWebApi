@@ -5,22 +5,7 @@
     <option name="CUSTOM_SCOPE_NAME" value="Current File" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c3c54dd-b760-47dd-8450-5411ab1536d6" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/ShoppingCartWebApi.Tests/TestSetup.cs" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ShoppingCartWebApi/.idea/contentModel.xml" afterPath="$PROJECT_DIR$/.idea/.idea.ShoppingCartWebApi/.idea/contentModel.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ShoppingCartWebApi/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.ShoppingCartWebApi/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Contracts/IShoppingCartController.cs" afterPath="$PROJECT_DIR$/Contracts/IShoppingCartController.cs" />
-      <change beforePath="$PROJECT_DIR$/Controllers/ShoppingCartController.cs" afterPath="$PROJECT_DIR$/Controllers/ShoppingCartController.cs" />
-      <change beforePath="$PROJECT_DIR$/InMemoryRepository/Interfaces/IShoppingCartRepository.cs" afterPath="$PROJECT_DIR$/InMemoryRepository/Interfaces/IShoppingCartRepository.cs" />
-      <change beforePath="$PROJECT_DIR$/InMemoryRepository/ShoppingCartRepository.cs" afterPath="$PROJECT_DIR$/InMemoryRepository/ShoppingCartRepository.cs" />
-      <change beforePath="$PROJECT_DIR$/Models/Handlers/ShoppingCartHandler.cs" afterPath="$PROJECT_DIR$/Models/Handlers/ShoppingCartHandler.cs" />
-      <change beforePath="$PROJECT_DIR$/Models/Interfaces/IShoppingCartHandler.cs" afterPath="$PROJECT_DIR$/Models/Interfaces/IShoppingCartHandler.cs" />
-      <change beforePath="$PROJECT_DIR$/Models/ShoppingCart.cs" afterPath="$PROJECT_DIR$/Models/ShoppingCart.cs" />
-      <change beforePath="$PROJECT_DIR$/ShoppingCartWebApi.Tests/ShoppingCartControllerTests.cs" afterPath="$PROJECT_DIR$/ShoppingCartWebApi.Tests/ShoppingCartControllerTests.cs" />
-      <change beforePath="$PROJECT_DIR$/ShoppingCartWebApi.Tests/ShoppingCartHandlerTests.cs" afterPath="$PROJECT_DIR$/ShoppingCartWebApi.Tests/ShoppingCartHandlerTests.cs" />
-      <change beforePath="$PROJECT_DIR$/ShoppingCartWebApi.Tests/ShoppingCartRepositoryTests.cs" afterPath="$PROJECT_DIR$/ShoppingCartWebApi.Tests/ShoppingCartRepositoryTests.cs" />
-      <change beforePath="$PROJECT_DIR$/Startup.cs" afterPath="$PROJECT_DIR$/Startup.cs" />
-    </list>
+    <list default="true" id="6c3c54dd-b760-47dd-8450-5411ab1536d6" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +68,7 @@
             <entry file="file://$PROJECT_DIR$/ShoppingCartWebApi.Tests/TestSetup.cs">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="306">
-                  <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+                  <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
                   <folding>
                     <marker date="1518996179203" expanded="true" signature="6:66" ph="..." />
                     <marker date="1518996179203" expanded="true" signature="101:503" ph="{...}" />
@@ -302,12 +287,12 @@
       <workItem from="1518868442475" duration="6880000" />
       <workItem from="1518895815890" duration="5541000" />
       <workItem from="1518948399103" duration="23425000" />
-      <workItem from="1518993432093" duration="2870000" />
+      <workItem from="1518993432093" duration="3269000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62508000" />
+    <option name="totallyTimeSpent" value="62907000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -849,7 +834,7 @@
     <entry file="file://$PROJECT_DIR$/ShoppingCartWebApi.Tests/TestSetup.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
           <folding>
             <marker date="1518996179203" expanded="true" signature="6:66" ph="..." />
             <marker date="1518996179203" expanded="true" signature="101:503" ph="{...}" />

@@ -1,5 +1,12 @@
 Details about the API Definition,Code and the Test Suite
 
+---------------------------------------------------------------------------------
+Github Code Repository:
+---------------------------------------------------------------------------------
+
+Web API Server Side	: https://github.com/vv-myst/ShoppingCartWebApi
+Web API Client Side	: https://github.com/vv-myst/ShoppingCartWebApi_Client
+
 
 
 ---------------------------------------------------------------------------------
@@ -16,12 +23,13 @@ Coding:
 ---------------------------------------------------------------------------------
 
 Language			: C#
-Framework			: .NET 4.6 and .NET Core 2.0
+Framework			: .NET Core 2.0
 IDE					: Rider by JetBrains (https://www.jetbrains.com/rider/)
 Package Manager		: NuGet (https://www.nuget.org/)
 Unit Tests			: NUnit v3.9.0 (http://nunit.org/)
 Mocking Framework	: Moq v4.8.1 (https://github.com/moq)
 Version Control		: Git
+
 
 
 ---------------------------------------------------------------------------------
