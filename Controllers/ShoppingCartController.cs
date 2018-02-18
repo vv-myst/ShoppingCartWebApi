@@ -11,12 +11,12 @@ using ShoppingCartWebApi.Models.Interfaces;
 namespace ShoppingCartWebApi.Controllers
 {
     [Route("api/shoppingcart")]
-    public class ShoppingCartControllerWithHandler : IShoppingCartController
+    public class ShoppingCartController : IShoppingCartController
     {
         private readonly IShoppingCartRepository shoppingCartEntities;
         private readonly IShoppingCartHandler shoppingCartHandler;
 
-        public ShoppingCartControllerWithHandler(IShoppingCartRepository shoppingCartEntities,
+        public ShoppingCartController(IShoppingCartRepository shoppingCartEntities,
             IShoppingCartHandler shoppingCartHandler)
         {
             this.shoppingCartEntities = shoppingCartEntities;

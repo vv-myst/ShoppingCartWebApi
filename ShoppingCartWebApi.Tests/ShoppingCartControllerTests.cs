@@ -16,7 +16,7 @@ using ShoppingCartWebApi.Models.Interfaces;
 namespace ShoppingCartWebApiTests
 {
     [TestFixture]
-    public class ShoppingCartControllerWithHandlerTests
+    public class ShoppingCartControllerTests
     {
         [SetUp]
         public void Init()
@@ -26,7 +26,7 @@ namespace ShoppingCartWebApiTests
             mockShoppingCartRepository = new Mock<ShoppingCartRepository>().Object;
             mockShoppingCartHandler = new Mock<ShoppingCartHandler>(mockShoppingCartRepository).Object;
             mockShoppingCartControllerWithHandler =
-                new Mock<ShoppingCartControllerWithHandler>(mockShoppingCartRepository, mockShoppingCartHandler).Object;
+                new Mock<ShoppingCartController>(mockShoppingCartRepository, mockShoppingCartHandler).Object;
         }
 
         private Item mockItem1;
