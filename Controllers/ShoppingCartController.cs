@@ -13,13 +13,13 @@ namespace ShoppingCartWebApi.Controllers
     [Route("api/shoppingcart")]
     public class ShoppingCartController : IShoppingCartController
     {
-        private readonly IShoppingCartRepository shoppingCartEntities;
+        private readonly IShoppingCartRepository shoppingCartRepository;
         private readonly IShoppingCartHandler shoppingCartHandler;
 
-        public ShoppingCartController(IShoppingCartRepository shoppingCartEntities,
+        public ShoppingCartController(IShoppingCartRepository shoppingCartRepository,
             IShoppingCartHandler shoppingCartHandler)
         {
-            this.shoppingCartEntities = shoppingCartEntities;
+            this.shoppingCartRepository = shoppingCartRepository;
             this.shoppingCartHandler = shoppingCartHandler;
         }
 
@@ -39,10 +39,10 @@ namespace ShoppingCartWebApi.Controllers
 
             await Task.Run(() =>
             {
-                shoppingCartHandler.AddItemToShoppingCart(shoppingCartEntities.InMemoryShoppingCart, item);
+                shoppingCartHandler.AddItemToShoppingCart(shoppingCartRepository.InMemoryShoppingCart, item);
             });
 
-            return new ObjectResult(shoppingCartEntities.InMemoryShoppingCart)
+            return new ObjectResult(shoppingCartRepository.InMemoryShoppingCart)
             {
                 StatusCode = (int) HttpStatusCode.OK
             };
@@ -59,16 +59,16 @@ namespace ShoppingCartWebApi.Controllers
         [HttpPut("{itemid}/{itemcount}")]
         public async Task<IActionResult> Put(int itemId, int itemCount)
         {
-            if (!shoppingCartHandler.DoesItemExist(shoppingCartEntities.InMemoryShoppingCart, itemId))
+            if (!shoppingCartHandler.DoesItemExist(shoppingCartRepository.InMemoryShoppingCart, itemId))
                 return itemId.ErrorItemNotFound();
 
             await Task.Run(() =>
             {
-                shoppingCartHandler.UpdateItemQuantityInShoppingCart(shoppingCartEntities.InMemoryShoppingCart, itemId,
+                shoppingCartHandler.UpdateItemQuantityInShoppingCart(shoppingCartRepository.InMemoryShoppingCart, itemId,
                     itemCount);
             });
 
-            return new ObjectResult(shoppingCartEntities.InMemoryShoppingCart)
+            return new ObjectResult(shoppingCartRepository.InMemoryShoppingCart)
             {
                 StatusCode = (int) HttpStatusCode.OK
             };
@@ -84,15 +84,15 @@ namespace ShoppingCartWebApi.Controllers
         [HttpDelete("{itemid}")]
         public async Task<IActionResult> Delete(int itemId)
         {
-            if (!shoppingCartHandler.DoesItemExist(shoppingCartEntities.InMemoryShoppingCart, itemId))
+            if (!shoppingCartHandler.DoesItemExist(shoppingCartRepository.InMemoryShoppingCart, itemId))
                 return itemId.ErrorItemNotFound();
 
             await Task.Run(() =>
             {
-                shoppingCartHandler.DeleteItemsFromShoppingCart(shoppingCartEntities.InMemoryShoppingCart, itemId);
+                shoppingCartHandler.DeleteItemsFromShoppingCart(shoppingCartRepository.InMemoryShoppingCart, itemId);
             });
 
-            return new ObjectResult(shoppingCartEntities.InMemoryShoppingCart)
+            return new ObjectResult(shoppingCartRepository.InMemoryShoppingCart)
             {
                 StatusCode = (int) HttpStatusCode.OK
             };
@@ -108,10 +108,10 @@ namespace ShoppingCartWebApi.Controllers
         {
             await Task.Run(() =>
             {
-                shoppingCartHandler.EmptyShoppingCart(shoppingCartEntities.InMemoryShoppingCart);
+                shoppingCartHandler.EmptyShoppingCart(shoppingCartRepository.InMemoryShoppingCart);
             });
 
-            return new ObjectResult(shoppingCartEntities.InMemoryShoppingCart)
+            return new ObjectResult(shoppingCartRepository.InMemoryShoppingCart)
             {
                 StatusCode = (int) HttpStatusCode.OK
             };

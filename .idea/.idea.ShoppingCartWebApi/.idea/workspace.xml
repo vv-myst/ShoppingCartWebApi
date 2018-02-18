@@ -6,10 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c3c54dd-b760-47dd-8450-5411ab1536d6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ShoppingCartWebApi/.idea/contentModel.xml" afterPath="$PROJECT_DIR$/.idea/.idea.ShoppingCartWebApi/.idea/contentModel.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ShoppingCartWebApi/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.ShoppingCartWebApi/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Controllers/ShoppingCartControllerWithHandler.cs" afterPath="$PROJECT_DIR$/Controllers/ShoppingCartController.cs" />
-      <change beforePath="$PROJECT_DIR$/ShoppingCartWebApi.Tests/ShoppingCartControllerWithHandlerTests.cs" afterPath="$PROJECT_DIR$/ShoppingCartWebApi.Tests/ShoppingCartControllerTests.cs" />
+      <change beforePath="$PROJECT_DIR$/Controllers/ShoppingCartController.cs" afterPath="$PROJECT_DIR$/Controllers/ShoppingCartController.cs" />
+      <change beforePath="$PROJECT_DIR$/Startup.cs" afterPath="$PROJECT_DIR$/Startup.cs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,38 +43,60 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShoppingCartController.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Startup.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Startup.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+              <folding>
+                <marker date="1518982419080" expanded="true" signature="6:348" ph="..." />
+                <marker date="1518982419080" expanded="true" signature="378:1367" ph="{...}" />
+                <marker date="1518982419080" expanded="true" signature="405:1365" ph="{...}" />
+                <marker date="1518982419080" expanded="true" signature="464:527" ph="{...}" />
+                <marker date="1518982419080" expanded="true" signature="750:1054" ph="{...}" />
+                <marker date="1518982419080" expanded="true" signature="1242:1359" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShoppingCartController.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Controllers/ShoppingCartController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="23" column="9" lean-forward="false" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+            <state relative-caret-position="238">
+              <caret line="22" column="58" lean-forward="false" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="58" />
               <folding>
-                <marker date="1518981436485" expanded="false" signature="6:342" ph="..." />
-                <marker date="1518981436485" expanded="true" signature="384:4187" ph="{...}" />
-                <marker date="1518981436485" expanded="true" signature="484:4185" ph="{...}" />
-                <marker date="1518981436485" expanded="true" signature="767:909" ph="{...}" />
-                <marker date="1518981436485" expanded="true" signature="919:1194" ph="///     Add a new item to the shopping cart ... " />
-                <marker date="1518981436485" expanded="true" signature="1305:1754" ph="{...}" />
-                <marker date="1518981436485" expanded="true" signature="1444:1580" ph="{...}" />
-                <marker date="1518981436485" expanded="true" signature="1675:1743" ph="{...}" />
-                <marker date="1518981436485" expanded="true" signature="1764:2072" ph="///     Update the item count of a particular item in the shopping cart ... " />
-                <marker date="1518981436485" expanded="true" signature="2186:2738" ph="{...}" />
-                <marker date="1518981436485" expanded="true" signature="2384:2564" ph="{...}" />
-                <marker date="1518981436485" expanded="true" signature="2659:2727" ph="{...}" />
-                <marker date="1518981436485" expanded="true" signature="2748:2993" ph="///     Delete a specific item from the shopping cart ... " />
-                <marker date="1518981436485" expanded="true" signature="3086:3602" ph="{...}" />
-                <marker date="1518981436485" expanded="true" signature="3284:3428" ph="{...}" />
-                <marker date="1518981436485" expanded="true" signature="3523:3591" ph="{...}" />
-                <marker date="1518981436485" expanded="true" signature="3612:3765" ph="///     Delete all the items in the shopping cart ... " />
-                <marker date="1518981436485" expanded="true" signature="3836:4179" ph="{...}" />
-                <marker date="1518981436485" expanded="true" signature="3879:4005" ph="{...}" />
-                <marker date="1518981436485" expanded="true" signature="4100:4168" ph="{...}" />
+                <marker date="1518982214183" expanded="false" signature="6:342" ph="..." />
+                <marker date="1518982214183" expanded="true" signature="384:4215" ph="{...}" />
+                <marker date="1518982214183" expanded="true" signature="484:4213" ph="{...}" />
+                <marker date="1518982214183" expanded="true" signature="771:917" ph="{...}" />
+                <marker date="1518982214183" expanded="true" signature="927:1202" ph="///     Add a new item to the shopping cart ... " />
+                <marker date="1518982214183" expanded="true" signature="1313:1766" ph="{...}" />
+                <marker date="1518982214183" expanded="true" signature="1452:1590" ph="{...}" />
+                <marker date="1518982214183" expanded="true" signature="1687:1755" ph="{...}" />
+                <marker date="1518982214183" expanded="true" signature="1776:2084" ph="///     Update the item count of a particular item in the shopping cart ... " />
+                <marker date="1518982214183" expanded="true" signature="2198:2756" ph="{...}" />
+                <marker date="1518982214183" expanded="true" signature="2398:2580" ph="{...}" />
+                <marker date="1518982214183" expanded="true" signature="2677:2745" ph="{...}" />
+                <marker date="1518982214183" expanded="true" signature="2766:3011" ph="///     Delete a specific item from the shopping cart ... " />
+                <marker date="1518982214183" expanded="true" signature="3104:3626" ph="{...}" />
+                <marker date="1518982214183" expanded="true" signature="3304:3450" ph="{...}" />
+                <marker date="1518982214183" expanded="true" signature="3547:3615" ph="{...}" />
+                <marker date="1518982214183" expanded="true" signature="3636:3789" ph="///     Delete all the items in the shopping cart ... " />
+                <marker date="1518982214183" expanded="true" signature="3860:4207" ph="{...}" />
+                <marker date="1518982214183" expanded="true" signature="3903:4031" ph="{...}" />
+                <marker date="1518982214183" expanded="true" signature="4128:4196" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>entities</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -135,10 +155,10 @@
         <option value="$PROJECT_DIR$/ShoppingCartWebApi.Tests/ShoppingCartHandlerTests.cs" />
         <option value="$PROJECT_DIR$/Controllers/ShoppingCartControllerWithHandler.cs" />
         <option value="$PROJECT_DIR$/InMemoryRepository/Interfaces/IShoppingCartRepository.cs" />
-        <option value="$PROJECT_DIR$/Startup.cs" />
         <option value="$PROJECT_DIR$/Models/ShoppingCart.cs" />
         <option value="$PROJECT_DIR$/ShoppingCartWebApi.Tests/ShoppingCartControllerTests.cs" />
         <option value="$PROJECT_DIR$/Controllers/ShoppingCartController.cs" />
+        <option value="$PROJECT_DIR$/Startup.cs" />
       </list>
     </option>
   </component>
@@ -186,12 +206,32 @@
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
               <item name="ShoppingCartWebApi (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
               <item name="ShoppingCartWebApi" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Contracts" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="ShoppingCartWebApi (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="ShoppingCartWebApi" type="977d5f41:SolutionExplorerNodeRider" />
               <item name="Controllers" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
             <path>
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
               <item name="ShoppingCartWebApi (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="ShoppingCartWebApiTests" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="ShoppingCartWebApi" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="InMemoryRepository" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="ShoppingCartWebApi (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="ShoppingCartWebApi" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Models" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="ShoppingCartWebApi (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="ShoppingCartWebApi" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Models" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Interfaces" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
           </expand>
           <select />
@@ -205,7 +245,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ShoppingCartWebApi_Client/ShoppingCartWebApiClient.sln" />
-    <property name="SearchEverywhereHistoryKey" value="Ire&#9;FILE&#9;file://C:/Users/BILA007/RiderProjects/ShoppingCartWebApi/IRepository.cs&#10;Iem&#9;FILE&#9;file://C:/Users/BILA007/RiderProjects/ShoppingCartWebApi/Contracts/IEmptyShoppingCartController.cs&#10;Sho&#9;FILE&#9;file://C:/Users/BILA007/RiderProjects/ShoppingCartWebApi/ShoppingCartEntities.cs" />
+    <property name="SearchEverywhereHistoryKey" value="Hand&#9;FILE&#9;file://C:/Users/BILA007/RiderProjects/ShoppingCartWebApi/Models/Handlers/ShoppingCartHandler.cs&#10;Ire&#9;FILE&#9;file://C:/Users/BILA007/RiderProjects/ShoppingCartWebApi/IRepository.cs&#10;Iem&#9;FILE&#9;file://C:/Users/BILA007/RiderProjects/ShoppingCartWebApi/Contracts/IEmptyShoppingCartController.cs&#10;Sho&#9;FILE&#9;file://C:/Users/BILA007/RiderProjects/ShoppingCartWebApi/ShoppingCartEntities.cs" />
     <property name="settings.editor.selected.configurable" value="preferences.customizations" />
   </component>
   <component name="RunDashboard">
@@ -264,12 +304,12 @@
       <workItem from="1518867492593" duration="894000" />
       <workItem from="1518868442475" duration="6880000" />
       <workItem from="1518895815890" duration="5541000" />
-      <workItem from="1518948399103" duration="20090000" />
+      <workItem from="1518948399103" duration="20992000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56303000" />
+    <option name="totallyTimeSpent" value="57205000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -286,15 +326,15 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992464" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960325" sideWeight="0.38697523" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Unit Tests" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960325" sideWeight="0.60495156" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960325" sideWeight="0.6022605" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.49779493" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960325" sideWeight="0.56350917" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960325" sideWeight="0.55920345" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.49779493" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960325" sideWeight="0.5898816" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Change Signature" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16684607" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960325" sideWeight="0.39504844" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960325" sideWeight="0.44079655" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960325" sideWeight="0.49354145" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -384,7 +424,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ShoppingCartWebApi.Tests/ShoppingCartWebApiTests/ShoppingCartControllerTests.cs" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/51C22D6F-BC23-41DD-8525-4DF19ED44462/83/8f68279c/AsyncTaskMethodBuilder`1.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -425,12 +464,12 @@
         <state relative-caret-position="289">
           <caret line="26" column="33" lean-forward="false" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
           <folding>
-            <marker date="1518980121685" expanded="false" signature="6:262" ph="..." />
-            <marker date="1518980121685" expanded="true" signature="292:1126" ph="{...}" />
-            <marker date="1518980121685" expanded="true" signature="319:1124" ph="{...}" />
-            <marker date="1518980121685" expanded="true" signature="378:441" ph="{...}" />
-            <marker date="1518980121685" expanded="true" signature="664:813" ph="{...}" />
-            <marker date="1518980121685" expanded="true" signature="1001:1118" ph="{...}" />
+            <marker date="1518982419080" expanded="true" signature="6:348" ph="..." />
+            <marker date="1518982419080" expanded="true" signature="378:1367" ph="{...}" />
+            <marker date="1518982419080" expanded="true" signature="405:1365" ph="{...}" />
+            <marker date="1518982419080" expanded="true" signature="464:527" ph="{...}" />
+            <marker date="1518982419080" expanded="true" signature="750:1054" ph="{...}" />
+            <marker date="1518982419080" expanded="true" signature="1242:1359" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -585,41 +624,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Models/Handlers/ShoppingCartHandler.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="37" lean-forward="false" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
-          <folding>
-            <marker date="1518979975488" expanded="false" signature="6:163" ph="..." />
-            <marker date="1518979975488" expanded="true" signature="209:6508" ph="{...}" />
-            <marker date="1518979975488" expanded="true" signature="271:6506" ph="{...}" />
-            <marker date="1518979975488" expanded="true" signature="434:520" ph="{...}" />
-            <marker date="1518979975488" expanded="true" signature="530:801" ph="///     Check if an item with the specific itemId exists in the shopping cart ... " />
-            <marker date="1518979975488" expanded="true" signature="874:980" ph="{...}" />
-            <marker date="1518979975488" expanded="true" signature="990:1191" ph="///     Adds an item to the shopping cart ... " />
-            <marker date="1518979975488" expanded="true" signature="1271:1504" ph="{...}" />
-            <marker date="1518979975488" expanded="true" signature="1514:1744" ph="///     Delete all items from the shopping cart for the given itemId ... " />
-            <marker date="1518979975488" expanded="true" signature="1831:2269" ph="{...}" />
-            <marker date="1518979975488" expanded="true" signature="2279:2564" ph="///     Update the quantity of items in the shopping cart for the given itemId ... " />
-            <marker date="1518979975488" expanded="true" signature="2671:3593" ph="{...}" />
-            <marker date="1518979975488" expanded="true" signature="2849:3132" ph="{...}" />
-            <marker date="1518979975488" expanded="true" signature="3149:3473" ph="{...}" />
-            <marker date="1518979975488" expanded="true" signature="3603:3770" ph="///     Remove all items from the shopping cart ... " />
-            <marker date="1518979975488" expanded="true" signature="3835:4018" ph="{...}" />
-            <marker date="1518979975488" expanded="true" signature="4103:4168" ph="{...}" />
-            <marker date="1518979975488" expanded="true" signature="4250:4430" ph="{...}" />
-            <marker date="1518979975488" expanded="true" signature="4535:4728" ph="{...}" />
-            <marker date="1518979975488" expanded="true" signature="4809:4980" ph="{...}" />
-            <marker date="1518979975488" expanded="true" signature="5079:5207" ph="{...}" />
-            <marker date="1518979975488" expanded="true" signature="5340:5554" ph="{...}" />
-            <marker date="1518979975488" expanded="true" signature="5672:6201" ph="{...}" />
-            <marker date="1518979975488" expanded="true" signature="5855:6191" ph="{...}" />
-            <marker date="1518979975488" expanded="true" signature="6283:6346" ph="{...}" />
-            <marker date="1518979975488" expanded="true" signature="6433:6500" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Contracts/IShoppingCartController.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -649,21 +653,6 @@
             <marker date="1518978737373" expanded="true" signature="652:766" ph="///     A short description about the item ... " />
             <marker date="1518978737373" expanded="true" signature="819:924" ph="///     Cost of the item (in EUR) ... " />
             <marker date="1518978737373" expanded="true" signature="972:1086" ph="///     Quantity of items in the inventory ... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Startup.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="9" lean-forward="false" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
-          <folding>
-            <marker date="1518980121685" expanded="false" signature="6:262" ph="..." />
-            <marker date="1518980121685" expanded="true" signature="292:1126" ph="{...}" />
-            <marker date="1518980121685" expanded="true" signature="319:1124" ph="{...}" />
-            <marker date="1518980121685" expanded="true" signature="378:441" ph="{...}" />
-            <marker date="1518980121685" expanded="true" signature="664:813" ph="{...}" />
-            <marker date="1518980121685" expanded="true" signature="1001:1118" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -736,22 +725,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/InMemoryRepository/ShoppingCartRepository.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="25" column="27" lean-forward="false" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
-          <folding>
-            <marker date="1518979975473" expanded="false" signature="6:122" ph="..." />
-            <marker date="1518979975473" expanded="true" signature="171:1117" ph="{...}" />
-            <marker date="1518979975473" expanded="true" signature="239:1115" ph="{...}" />
-            <marker date="1518979975473" expanded="true" signature="285:376" ph="{...}" />
-            <marker date="1518979975473" expanded="true" signature="386:519" ph="///     An in memory storage of Shopping Cart and its changes ... " />
-            <marker date="1518979975473" expanded="true" signature="587:783" ph="///     Update an existing entry in the repository ... " />
-            <marker date="1518979975473" expanded="true" signature="831:1109" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Controllers/ShoppingCartController.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1683">
@@ -811,31 +784,105 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../ShoppingCartWebApi_Client/ShoppingCartWebApiClient.sln">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InMemoryRepository/ShoppingCartRepository.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="25" column="27" lean-forward="false" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+          <folding>
+            <marker date="1518979975473" expanded="false" signature="6:122" ph="..." />
+            <marker date="1518979975473" expanded="true" signature="171:1117" ph="{...}" />
+            <marker date="1518979975473" expanded="true" signature="239:1115" ph="{...}" />
+            <marker date="1518979975473" expanded="true" signature="285:376" ph="{...}" />
+            <marker date="1518979975473" expanded="true" signature="386:519" ph="///     An in memory storage of Shopping Cart and its changes ... " />
+            <marker date="1518979975473" expanded="true" signature="587:783" ph="///     Update an existing entry in the repository ... " />
+            <marker date="1518979975473" expanded="true" signature="831:1109" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/Handlers/ShoppingCartHandler.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="81" lean-forward="false" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="81" />
+          <folding>
+            <marker date="1518979975488" expanded="false" signature="6:163" ph="..." />
+            <marker date="1518979975488" expanded="true" signature="209:6508" ph="{...}" />
+            <marker date="1518979975488" expanded="true" signature="271:6506" ph="{...}" />
+            <marker date="1518979975488" expanded="true" signature="434:520" ph="{...}" />
+            <marker date="1518979975488" expanded="true" signature="530:801" ph="///     Check if an item with the specific itemId exists in the shopping cart ... " />
+            <marker date="1518979975488" expanded="true" signature="874:980" ph="{...}" />
+            <marker date="1518979975488" expanded="true" signature="990:1191" ph="///     Adds an item to the shopping cart ... " />
+            <marker date="1518979975488" expanded="true" signature="1271:1504" ph="{...}" />
+            <marker date="1518979975488" expanded="true" signature="1514:1744" ph="///     Delete all items from the shopping cart for the given itemId ... " />
+            <marker date="1518979975488" expanded="true" signature="1831:2269" ph="{...}" />
+            <marker date="1518979975488" expanded="true" signature="2279:2564" ph="///     Update the quantity of items in the shopping cart for the given itemId ... " />
+            <marker date="1518979975488" expanded="true" signature="2671:3593" ph="{...}" />
+            <marker date="1518979975488" expanded="true" signature="2849:3132" ph="{...}" />
+            <marker date="1518979975488" expanded="true" signature="3149:3473" ph="{...}" />
+            <marker date="1518979975488" expanded="true" signature="3603:3770" ph="///     Remove all items from the shopping cart ... " />
+            <marker date="1518979975488" expanded="true" signature="3835:4018" ph="{...}" />
+            <marker date="1518979975488" expanded="true" signature="4103:4168" ph="{...}" />
+            <marker date="1518979975488" expanded="true" signature="4250:4430" ph="{...}" />
+            <marker date="1518979975488" expanded="true" signature="4535:4728" ph="{...}" />
+            <marker date="1518979975488" expanded="true" signature="4809:4980" ph="{...}" />
+            <marker date="1518979975488" expanded="true" signature="5079:5207" ph="{...}" />
+            <marker date="1518979975488" expanded="true" signature="5340:5554" ph="{...}" />
+            <marker date="1518979975488" expanded="true" signature="5672:6201" ph="{...}" />
+            <marker date="1518979975488" expanded="true" signature="5855:6191" ph="{...}" />
+            <marker date="1518979975488" expanded="true" signature="6283:6346" ph="{...}" />
+            <marker date="1518979975488" expanded="true" signature="6433:6500" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Controllers/ShoppingCartController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="23" column="9" lean-forward="false" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+        <state relative-caret-position="238">
+          <caret line="22" column="58" lean-forward="false" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="58" />
           <folding>
-            <marker date="1518981436485" expanded="false" signature="6:342" ph="..." />
-            <marker date="1518981436485" expanded="true" signature="384:4187" ph="{...}" />
-            <marker date="1518981436485" expanded="true" signature="484:4185" ph="{...}" />
-            <marker date="1518981436485" expanded="true" signature="767:909" ph="{...}" />
-            <marker date="1518981436485" expanded="true" signature="919:1194" ph="///     Add a new item to the shopping cart ... " />
-            <marker date="1518981436485" expanded="true" signature="1305:1754" ph="{...}" />
-            <marker date="1518981436485" expanded="true" signature="1444:1580" ph="{...}" />
-            <marker date="1518981436485" expanded="true" signature="1675:1743" ph="{...}" />
-            <marker date="1518981436485" expanded="true" signature="1764:2072" ph="///     Update the item count of a particular item in the shopping cart ... " />
-            <marker date="1518981436485" expanded="true" signature="2186:2738" ph="{...}" />
-            <marker date="1518981436485" expanded="true" signature="2384:2564" ph="{...}" />
-            <marker date="1518981436485" expanded="true" signature="2659:2727" ph="{...}" />
-            <marker date="1518981436485" expanded="true" signature="2748:2993" ph="///     Delete a specific item from the shopping cart ... " />
-            <marker date="1518981436485" expanded="true" signature="3086:3602" ph="{...}" />
-            <marker date="1518981436485" expanded="true" signature="3284:3428" ph="{...}" />
-            <marker date="1518981436485" expanded="true" signature="3523:3591" ph="{...}" />
-            <marker date="1518981436485" expanded="true" signature="3612:3765" ph="///     Delete all the items in the shopping cart ... " />
-            <marker date="1518981436485" expanded="true" signature="3836:4179" ph="{...}" />
-            <marker date="1518981436485" expanded="true" signature="3879:4005" ph="{...}" />
-            <marker date="1518981436485" expanded="true" signature="4100:4168" ph="{...}" />
+            <marker date="1518982214183" expanded="false" signature="6:342" ph="..." />
+            <marker date="1518982214183" expanded="true" signature="384:4215" ph="{...}" />
+            <marker date="1518982214183" expanded="true" signature="484:4213" ph="{...}" />
+            <marker date="1518982214183" expanded="true" signature="771:917" ph="{...}" />
+            <marker date="1518982214183" expanded="true" signature="927:1202" ph="///     Add a new item to the shopping cart ... " />
+            <marker date="1518982214183" expanded="true" signature="1313:1766" ph="{...}" />
+            <marker date="1518982214183" expanded="true" signature="1452:1590" ph="{...}" />
+            <marker date="1518982214183" expanded="true" signature="1687:1755" ph="{...}" />
+            <marker date="1518982214183" expanded="true" signature="1776:2084" ph="///     Update the item count of a particular item in the shopping cart ... " />
+            <marker date="1518982214183" expanded="true" signature="2198:2756" ph="{...}" />
+            <marker date="1518982214183" expanded="true" signature="2398:2580" ph="{...}" />
+            <marker date="1518982214183" expanded="true" signature="2677:2745" ph="{...}" />
+            <marker date="1518982214183" expanded="true" signature="2766:3011" ph="///     Delete a specific item from the shopping cart ... " />
+            <marker date="1518982214183" expanded="true" signature="3104:3626" ph="{...}" />
+            <marker date="1518982214183" expanded="true" signature="3304:3450" ph="{...}" />
+            <marker date="1518982214183" expanded="true" signature="3547:3615" ph="{...}" />
+            <marker date="1518982214183" expanded="true" signature="3636:3789" ph="///     Delete all the items in the shopping cart ... " />
+            <marker date="1518982214183" expanded="true" signature="3860:4207" ph="{...}" />
+            <marker date="1518982214183" expanded="true" signature="3903:4031" ph="{...}" />
+            <marker date="1518982214183" expanded="true" signature="4128:4196" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Startup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+          <folding>
+            <marker date="1518982419080" expanded="true" signature="6:348" ph="..." />
+            <marker date="1518982419080" expanded="true" signature="378:1367" ph="{...}" />
+            <marker date="1518982419080" expanded="true" signature="405:1365" ph="{...}" />
+            <marker date="1518982419080" expanded="true" signature="464:527" ph="{...}" />
+            <marker date="1518982419080" expanded="true" signature="750:1054" ph="{...}" />
+            <marker date="1518982419080" expanded="true" signature="1242:1359" ph="{...}" />
           </folding>
         </state>
       </provider>

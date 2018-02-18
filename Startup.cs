@@ -4,6 +4,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ShoppingCartWebApi.InMemoryRepository;
 using ShoppingCartWebApi.InMemoryRepository.Interfaces;
+using ShoppingCartWebApi.Models.Handlers;
+using ShoppingCartWebApi.Models.Interfaces;
 
 namespace ShoppingCartWebApi
 {
@@ -20,7 +22,9 @@ namespace ShoppingCartWebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddSingleton<IShoppingCartRepository>(item => new ShoppingCartRepository());
+            var shoppinCartRepo = new ShoppingCartRepository();
+            services.AddSingleton<IShoppingCartRepository>(item => shoppinCartRepo);
+            services.AddScoped<IShoppingCartHandler>(item => new ShoppingCartHandler(shoppinCartRepo));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
