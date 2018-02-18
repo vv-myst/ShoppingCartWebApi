@@ -1,19 +1,9 @@
-﻿#region Auto generated information. Please do not modify
-
-// ShoppingCartWebApi ShoppingCartWebApi ShoppingCart.cs
-// bila007 Bilangi, Vivek-Vardhan
-// 2018-02-16 8:33 
-// 2018-02-15 11:06 
-
-#endregion
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using ShoppingCartWebApi.Models.Interfaces;
 
 namespace ShoppingCartWebApi.Models
 {
-    public class ShoppingCart : IShoppingCart
+    public class ShoppingCart
     {
         public ShoppingCart(IList<Item> itemList)
         {
@@ -23,23 +13,36 @@ namespace ShoppingCartWebApi.Models
             UpdateShoppingCart();
         }
 
-        public IList<Item> ItemList { get; }
-        public IDictionary<int, int> ItemCountMap { get; }
-        public int ItemCount { get; private set; }
-        public decimal TotalValue { get; private set; }
+        /// <summary>
+        ///     List of items in the shopping cart
+        /// </summary>
+        public IList<Item> ItemList { get; internal set; }
 
-        /// <inheritdoc />
+        /// <summary>
+        ///     Dictionary where the ItemId is the key and ItemCount is the value
+        /// </summary>
+        public IDictionary<int, int> ItemCountMap { get; internal set; }
+
+        /// <summary>
+        ///     Total number of items in the shopping cart
+        /// </summary>
+        public int ItemCount { get; internal set; }
+
+        /// <summary>
+        ///     Total value of all the items in shopping cart
+        /// </summary>
+        public decimal TotalValue { get; internal set; }
+
         /// <summary>
         ///     Updates the total quantity of each item in the ItemCountMap dictionary
         ///     when a new item is added to the shopping cart
         /// </summary>
         public void UpdateItemCountMapUponAdd()
         {
-            foreach (var item in ItemList) 
+            foreach (var item in ItemList)
                 ItemCountMap[item.Id] = ItemList.Count(x => x.Id == item.Id);
         }
 
-        /// <inheritdoc />
         /// <summary>
         ///     Updates the total quantity of each item in the ItemCountMap dictionary
         ///     when items of a particular id are deleted from the shopping cart.
@@ -47,13 +50,12 @@ namespace ShoppingCartWebApi.Models
         /// <param name="itemId"></param>
         public void UpdateItemCountMapUponDelete(int itemId)
         {
-            if(ItemList.Count == 0)
+            if (ItemList.Count == 0)
                 ClearItemCountMap();
             else
                 ItemCountMap[itemId] = 0;
         }
 
-        /// <inheritdoc />
         /// <summary>
         ///     Clears all the entries in the ItemCountMap dictionary
         /// </summary>
@@ -62,7 +64,6 @@ namespace ShoppingCartWebApi.Models
             ItemCountMap.Clear();
         }
 
-        /// <inheritdoc />
         /// <summary>
         ///     Updates the remaining properties of the shopping cart when an item
         ///     is either added or deleted from the cart.

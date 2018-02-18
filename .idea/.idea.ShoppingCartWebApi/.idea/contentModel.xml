@@ -18,13 +18,20 @@
           <e p="HttpErrorResults.cs" t="Include" />
         </e>
         <e p="ShoppingCartController.cs" t="Include" />
+        <e p="ShoppingCartControllerWithHandler.cs" t="Include" />
+      </e>
+      <e p="InMemoryRepository" t="Include">
+        <e p="Interfaces" t="Include">
+          <e p="IShoppingCartRepository.cs" t="Include" />
+        </e>
+        <e p="ShoppingCartRepository.cs" t="Include" />
       </e>
       <e p="Models" t="Include">
-        <e p="Extensions" t="Include">
-          <e p="ShoppingCartExtensions.cs" t="Include" />
+        <e p="Handlers" t="Include">
+          <e p="ShoppingCartHandler.cs" t="Include" />
         </e>
         <e p="Interfaces" t="Include">
-          <e p="IShoppingCart.cs" t="Include" />
+          <e p="IShoppingCartHandler.cs" t="Include" />
         </e>
         <e p="Item.cs" t="Include" />
         <e p="ShoppingCart.cs" t="Include" />
@@ -65,7 +72,6 @@
         <e p="ShoppingCartWebApi.postman_collection.json" t="Include" />
       </e>
       <e p="Program.cs" t="Include" />
-      <e p="ShoppingCartEntities.cs" t="Include" />
       <e p="ShoppingCartWebApi.csproj" t="IncludeRecursive" />
       <e p="ShoppingCartWebApi.sln" t="IncludeFlat" />
       <e p="ShoppingCartWebApi.Tests" t="IncludeRecursive">
@@ -89,6 +95,9 @@
           <e p="project.packagespec.json" t="Include" />
         </e>
         <e p="ShoppingCartControllerTests.cs" t="Include" />
+        <e p="ShoppingCartControllerWithHandlerTests.cs" t="Include" />
+        <e p="ShoppingCartHandlerTests.cs" t="Include" />
+        <e p="ShoppingCartRepositoryTests.cs" t="Include" />
         <e p="ShoppingCartWebApiTests.csproj" t="IncludeRecursive" />
       </e>
       <e p="Startup.cs" t="Include" />

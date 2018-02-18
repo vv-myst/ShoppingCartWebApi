@@ -1,18 +1,11 @@
-﻿#region Auto generated information. Please do not modify
-
-// ShoppingCartWebApi ShoppingCartWebApi ShoppingCartController.cs
-// bila007 Bilangi, Vivek-Vardhan
-// 2018-02-16 8:45 
-// 2018-02-15 10:57 
-
-#endregion
-
-using System.Linq;
+﻿using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ShoppingCartWebApi.Contracts;
 using ShoppingCartWebApi.Controllers.HttpErrors;
+using ShoppingCartWebApi.InMemoryRepository;
+using ShoppingCartWebApi.InMemoryRepository.Interfaces;
 using ShoppingCartWebApi.Models;
 
 namespace ShoppingCartWebApi.Controllers
@@ -20,9 +13,9 @@ namespace ShoppingCartWebApi.Controllers
     [Route("api/shoppingcart")]
     public class ShoppingCartController : IShoppingCartController
     {
-        private readonly ShoppingCartEntities shoppingCartEntities;
+        private readonly IShoppingCartRepository shoppingCartEntities;
 
-        public ShoppingCartController(ShoppingCartEntities shoppingCartEntities)
+        public ShoppingCartController(IShoppingCartRepository shoppingCartEntities)
         {
             this.shoppingCartEntities = shoppingCartEntities;
         }
@@ -66,7 +59,7 @@ namespace ShoppingCartWebApi.Controllers
         public async Task<IActionResult> Put(int itemId, int itemCount)
         {
             if (!DoesItemExist(itemId))
-                return itemId.ErrorNoItemFound();
+                return itemId.ErrorItemNotFound();
 
             await Task.Run(() =>
             {
@@ -95,15 +88,6 @@ namespace ShoppingCartWebApi.Controllers
                 StatusCode = (int) HttpStatusCode.OK
             };
         }
-        
-        private void ReduceCountInItemCountMap( int itemId,
-            int numberOfItemsToDelete)
-        {
-            if(shoppingCartEntities.InMemoryShoppingCart.ItemList.Count == 0)
-                shoppingCartEntities.InMemoryShoppingCart.ItemCountMap.Clear();
-            else
-                shoppingCartEntities.InMemoryShoppingCart.ItemCountMap[itemId] -= numberOfItemsToDelete;
-        }
 
         /// <inheritdoc />
         /// <summary>
@@ -116,7 +100,7 @@ namespace ShoppingCartWebApi.Controllers
         public async Task<IActionResult> Delete(int itemId)
         {
             if (!DoesItemExist(itemId))
-                return itemId.ErrorNoItemFound();
+                return itemId.ErrorItemNotFound();
 
             await Task.Run(() =>
             {
@@ -151,6 +135,15 @@ namespace ShoppingCartWebApi.Controllers
             {
                 StatusCode = (int) HttpStatusCode.OK
             };
+        }
+
+        private void ReduceCountInItemCountMap(int itemId,
+            int numberOfItemsToDelete)
+        {
+            if (shoppingCartEntities.InMemoryShoppingCart.ItemList.Count == 0)
+                shoppingCartEntities.InMemoryShoppingCart.ItemCountMap.Clear();
+            else
+                shoppingCartEntities.InMemoryShoppingCart.ItemCountMap[itemId] -= numberOfItemsToDelete;
         }
 
         private void AddItemToShoppingList(Item item)
