@@ -17,7 +17,6 @@
         <e p="HttpErrors" t="Include">
           <e p="HttpErrorResults.cs" t="Include" />
         </e>
-        <e p="ShoppingCartController.cs" t="Include" />
         <e p="ShoppingCartControllerWithHandler.cs" t="Include" />
       </e>
       <e p="InMemoryRepository" t="Include">
@@ -94,7 +93,6 @@
           <e p="project.assets.json" t="Include" />
           <e p="project.packagespec.json" t="Include" />
         </e>
-        <e p="ShoppingCartControllerTests.cs" t="Include" />
         <e p="ShoppingCartControllerWithHandlerTests.cs" t="Include" />
         <e p="ShoppingCartHandlerTests.cs" t="Include" />
         <e p="ShoppingCartRepositoryTests.cs" t="Include" />
