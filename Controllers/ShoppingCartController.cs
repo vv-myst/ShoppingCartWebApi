@@ -40,12 +40,10 @@ namespace ShoppingCartWebApi.Controllers
             if (item.Id != itemId)
                 return item.ErrorItemIdsDoNotMatch(itemId);
 
-            await Task.Run(() =>
-            {
-                shoppingCartHandler.AddItemToShoppingCart(shoppingCartRepository.InMemoryShoppingCart, item);
-            });
+            var shoppingCart =
+                await shoppingCartHandler.AddItemToShoppingCart(shoppingCartRepository.InMemoryShoppingCart, item);
 
-            return new ObjectResult(shoppingCartRepository.InMemoryShoppingCart)
+            return new ObjectResult(shoppingCart)
             {
                 StatusCode = (int) HttpStatusCode.OK
             };
@@ -60,20 +58,18 @@ namespace ShoppingCartWebApi.Controllers
         /// <param name="itemCount">ItemCount received in the request URL</param>
         ///     Returns Http ObjectResult with Status code 200 if success
         ///     else returns an Http ObjectResult with Status code 400 
-        /// </returns>
+        /// <returns/>
         [HttpPut("{itemid}/{itemcount}")]
         public async Task<IActionResult> Put(int itemId, int itemCount)
         {
             if (!shoppingCartHandler.DoesItemExist(shoppingCartRepository.InMemoryShoppingCart, itemId))
                 return itemId.ErrorItemNotFound();
 
-            await Task.Run(() =>
-            {
-                shoppingCartHandler.UpdateItemQuantityInShoppingCart(shoppingCartRepository.InMemoryShoppingCart, itemId,
-                    itemCount);
-            });
-
-            return new ObjectResult(shoppingCartRepository.InMemoryShoppingCart)
+            var shoppingCart = await shoppingCartHandler.UpdateItemQuantityInShoppingCart(
+                shoppingCartRepository.InMemoryShoppingCart, itemId,
+                itemCount);
+            
+            return new ObjectResult(shoppingCart)
             {
                 StatusCode = (int) HttpStatusCode.OK
             };
@@ -95,12 +91,11 @@ namespace ShoppingCartWebApi.Controllers
             if (!shoppingCartHandler.DoesItemExist(shoppingCartRepository.InMemoryShoppingCart, itemId))
                 return itemId.ErrorItemNotFound();
 
-            await Task.Run(() =>
-            {
-                shoppingCartHandler.DeleteItemsFromShoppingCart(shoppingCartRepository.InMemoryShoppingCart, itemId);
-            });
-
-            return new ObjectResult(shoppingCartRepository.InMemoryShoppingCart)
+            var shoppingCart =
+                await shoppingCartHandler.DeleteItemsFromShoppingCart(shoppingCartRepository.InMemoryShoppingCart,
+                    itemId);
+            
+            return new ObjectResult(shoppingCart)
             {
                 StatusCode = (int) HttpStatusCode.OK
             };

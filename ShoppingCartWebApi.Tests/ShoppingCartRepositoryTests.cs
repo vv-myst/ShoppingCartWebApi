@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Moq;
 using NUnit.Framework;
 using ShoppingCartWebApi;
@@ -13,11 +14,11 @@ namespace ShoppingCartWebApiTests
     public class ShoppingCartRepositoryTests : TestSetup
     {
         [SetUp]
-        public void Init() 
+        public void Initialize() 
         {
             mockShoppingCartRepository = new Mock<ShoppingCartRepository>().Object;
-            mockShoppingCart1 = new Mock<ShoppingCart>(new List<Item>{mockItem1, mockItem2}).Object;
-            mockShoppingCart2 = new Mock<ShoppingCart>(new List<Item>{mockItem1, mockItem2, mockItem1, mockItem2}).Object;
+            mockShoppingCart1 = new Mock<ShoppingCart>(new List<Item>{MockItem1, MockItem2}).Object;
+            mockShoppingCart2 = new Mock<ShoppingCart>(new List<Item>{MockItem1, MockItem2, MockItem1, MockItem2}).Object;
         }
 
         private IShoppingCartRepository mockShoppingCartRepository;
@@ -25,31 +26,31 @@ namespace ShoppingCartWebApiTests
         private ShoppingCart mockShoppingCart2;
 
         [Test]
-        public void Update_UpdatesInMemoryShoppingCartValues()
+        public async Task Update_UpdatesInMemoryShoppingCartValues()
         {
-            mockShoppingCartRepository.Update(mockShoppingCart1);
+            await mockShoppingCartRepository.Update(mockShoppingCart1);
 
             //after Update with mockShoppingCart1
             Assert.That(mockShoppingCartRepository.InMemoryShoppingCart.ItemCount, Is.EqualTo(2));
-            Assert.That(mockShoppingCartRepository.InMemoryShoppingCart.ItemList.Contains(mockItem1));
-            Assert.That(mockShoppingCartRepository.InMemoryShoppingCart.ItemList.Contains(mockItem2));
+            Assert.That(mockShoppingCartRepository.InMemoryShoppingCart.ItemList.Contains(MockItem1));
+            Assert.That(mockShoppingCartRepository.InMemoryShoppingCart.ItemList.Contains(MockItem2));
             Assert.That(mockShoppingCartRepository.InMemoryShoppingCart.ItemList.Count, Is.EqualTo(2));
             Assert.That(mockShoppingCartRepository.InMemoryShoppingCart.TotalValue, Is.EqualTo(150.00M));
             Assert.That(mockShoppingCartRepository.InMemoryShoppingCart.ItemCountMap.Count, Is.EqualTo(2));
-            Assert.That(mockShoppingCartRepository.InMemoryShoppingCart.ItemCountMap[mockItem1.Id], Is.EqualTo(1));
-            Assert.That(mockShoppingCartRepository.InMemoryShoppingCart.ItemCountMap[mockItem2.Id], Is.EqualTo(1));
+            Assert.That(mockShoppingCartRepository.InMemoryShoppingCart.ItemCountMap[MockItem1.Id], Is.EqualTo(1));
+            Assert.That(mockShoppingCartRepository.InMemoryShoppingCart.ItemCountMap[MockItem2.Id], Is.EqualTo(1));
 
-            mockShoppingCartRepository.Update(mockShoppingCart2);
+            await mockShoppingCartRepository.Update(mockShoppingCart2);
 
             //after Update with mockShoppingCart2
             Assert.That(mockShoppingCartRepository.InMemoryShoppingCart.ItemCount, Is.EqualTo(4));
-            Assert.That(mockShoppingCartRepository.InMemoryShoppingCart.ItemList.Contains(mockItem1));
-            Assert.That(mockShoppingCartRepository.InMemoryShoppingCart.ItemList.Contains(mockItem2));
+            Assert.That(mockShoppingCartRepository.InMemoryShoppingCart.ItemList.Contains(MockItem1));
+            Assert.That(mockShoppingCartRepository.InMemoryShoppingCart.ItemList.Contains(MockItem2));
             Assert.That(mockShoppingCartRepository.InMemoryShoppingCart.ItemList.Count, Is.EqualTo(4));
             Assert.That(mockShoppingCartRepository.InMemoryShoppingCart.TotalValue, Is.EqualTo(300.00M));
             Assert.That(mockShoppingCartRepository.InMemoryShoppingCart.ItemCountMap.Count, Is.EqualTo(2));
-            Assert.That(mockShoppingCartRepository.InMemoryShoppingCart.ItemCountMap[mockItem1.Id], Is.EqualTo(2));
-            Assert.That(mockShoppingCartRepository.InMemoryShoppingCart.ItemCountMap[mockItem2.Id], Is.EqualTo(2));
+            Assert.That(mockShoppingCartRepository.InMemoryShoppingCart.ItemCountMap[MockItem1.Id], Is.EqualTo(2));
+            Assert.That(mockShoppingCartRepository.InMemoryShoppingCart.ItemCountMap[MockItem2.Id], Is.EqualTo(2));
         }
     }
 }
