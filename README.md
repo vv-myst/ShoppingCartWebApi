@@ -1,4 +1,4 @@
-Details about the API Definition,Code and the Test Suite
+Details about the API Definition, Code and the Test Suite
 
 ---------------------------------------------------------------------------------
 Github Code Repository:
@@ -28,6 +28,7 @@ IDE					: Rider by JetBrains (https://www.jetbrains.com/rider/)
 Package Manager		: NuGet (https://www.nuget.org/)
 Unit Tests			: NUnit v3.10.1 (http://nunit.org/)
 Mocking Framework	: Moq v4.9.0 (https://github.com/moq)
+                    : Autofixture v4.5.0 (https://github.com/AutoFixture/AutoFixture)
 Version Control		: Git
 
 
@@ -36,14 +37,5 @@ Version Control		: Git
 API Testing:
 ---------------------------------------------------------------------------------
 
-Testing Tool		: Postman v5.5.3 (https://www.getpostman.com/)
+Testing Tool		: Postman v6.1.3 (https://www.getpostman.com/)
 Test Suite in Json	: ShoppingCartWebApi\PostmanTestSuite_ShoppingCartWebApi\ShoppingCartWebApi.postman_collection.json (Relative path)
-
-
-
----------------------------------------------------------------------------------
-Documentation:
----------------------------------------------------------------------------------
-
-API Definition 		: https://shoppingcartwebapi_vivek.restlet.io/
-API Testing			: https://documenter.getpostman.com/view/1051618/collection/RVfyAUtt

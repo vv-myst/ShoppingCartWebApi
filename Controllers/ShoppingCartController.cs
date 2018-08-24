@@ -2,11 +2,10 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ShoppingCartWebApi.Contracts;
+using ShoppingCartWebApi.Controllers.Extensions;
 using ShoppingCartWebApi.Controllers.HttpErrors;
-using ShoppingCartWebApi.InMemoryRepository;
 using ShoppingCartWebApi.InMemoryRepository.Interfaces;
 using ShoppingCartWebApi.Models;
-using ShoppingCartWebApi.Models.Interfaces;
 
 namespace ShoppingCartWebApi.Controllers
 {
@@ -14,13 +13,10 @@ namespace ShoppingCartWebApi.Controllers
     public class ShoppingCartController : IShoppingCartController
     {
         private readonly IShoppingCartRepository shoppingCartRepository;
-        private readonly IShoppingCartHandler shoppingCartHandler;
 
-        public ShoppingCartController(IShoppingCartRepository shoppingCartRepository,
-            IShoppingCartHandler shoppingCartHandler)
+        public ShoppingCartController(IShoppingCartRepository shoppingCartRepository)
         {
             this.shoppingCartRepository = shoppingCartRepository;
-            this.shoppingCartHandler = shoppingCartHandler;
         }
 
         /// <inheritdoc />
@@ -32,7 +28,7 @@ namespace ShoppingCartWebApi.Controllers
         /// <param name="itemId">ItemId received in the request URL</param>
         /// <returns>
         ///     Returns Http ObjectResult with Status code 200 if success
-        ///     else returns an Http ObjectResult with Status code 400 
+        ///     else returns an Http ObjectResult with Status code 400
         /// </returns>
         [HttpPost("{itemid}")]
         public async Task<IActionResult> Post([FromBody] Item item, int itemId)
@@ -40,10 +36,10 @@ namespace ShoppingCartWebApi.Controllers
             if (item.Id != itemId)
                 return item.ErrorItemIdsDoNotMatch(itemId);
 
-            var shoppingCart =
-                await shoppingCartHandler.AddItemToShoppingCart(shoppingCartRepository.InMemoryShoppingCart, item);
+            var shoppingCart = shoppingCartRepository.InMemoryShoppingCart.AddItemToShoppingCart(item);
+            var updatedCart = await shoppingCartRepository.Update(shoppingCart);
 
-            return new ObjectResult(shoppingCart)
+            return new ObjectResult(updatedCart)
             {
                 StatusCode = (int) HttpStatusCode.OK
             };
@@ -56,20 +52,21 @@ namespace ShoppingCartWebApi.Controllers
         /// </summary>
         /// <param name="itemId">ItemId received in the request URL</param>
         /// <param name="itemCount">ItemCount received in the request URL</param>
-        ///     Returns Http ObjectResult with Status code 200 if success
-        ///     else returns an Http ObjectResult with Status code 400 
-        /// <returns/>
+        /// Returns Http ObjectResult with Status code 200 if success
+        /// else returns an Http ObjectResult with Status code 400
+        /// <returns />
         [HttpPut("{itemid}/{itemcount}")]
         public async Task<IActionResult> Put(int itemId, int itemCount)
         {
-            if (!shoppingCartHandler.DoesItemExist(shoppingCartRepository.InMemoryShoppingCart, itemId))
+            if (!shoppingCartRepository.InMemoryShoppingCart.DoesItemExist(itemId))
                 return itemId.ErrorItemNotFound();
 
-            var shoppingCart = await shoppingCartHandler.UpdateItemQuantityInShoppingCart(
-                shoppingCartRepository.InMemoryShoppingCart, itemId,
-                itemCount);
-            
-            return new ObjectResult(shoppingCart)
+            var shoppingCart =
+                shoppingCartRepository.InMemoryShoppingCart.UpdateItemQuantityInShoppingCart(itemId, itemCount);
+
+            var updatedCart = await shoppingCartRepository.Update(shoppingCart);
+
+            return new ObjectResult(updatedCart)
             {
                 StatusCode = (int) HttpStatusCode.OK
             };
@@ -83,19 +80,18 @@ namespace ShoppingCartWebApi.Controllers
         /// <param name="itemId">ItemId received in the request URL</param>
         /// <returns>
         ///     Returns Http ObjectResult with Status code 200 if success
-        ///     else returns an Http ObjectResult with Status code 400 
+        ///     else returns an Http ObjectResult with Status code 400
         /// </returns>
         [HttpDelete("{itemid}")]
         public async Task<IActionResult> Delete(int itemId)
         {
-            if (!shoppingCartHandler.DoesItemExist(shoppingCartRepository.InMemoryShoppingCart, itemId))
+            if (!shoppingCartRepository.InMemoryShoppingCart.DoesItemExist(itemId))
                 return itemId.ErrorItemNotFound();
 
-            var shoppingCart =
-                await shoppingCartHandler.DeleteItemsFromShoppingCart(shoppingCartRepository.InMemoryShoppingCart,
-                    itemId);
-            
-            return new ObjectResult(shoppingCart)
+            var shoppingCart = shoppingCartRepository.InMemoryShoppingCart.DeleteItemsFromShoppingCart(itemId);
+            var updatedCart = await shoppingCartRepository.Update(shoppingCart);
+
+            return new ObjectResult(updatedCart)
             {
                 StatusCode = (int) HttpStatusCode.OK
             };
@@ -112,12 +108,10 @@ namespace ShoppingCartWebApi.Controllers
         [HttpDelete]
         public async Task<IActionResult> Delete()
         {
-            await Task.Run(() =>
-            {
-                shoppingCartHandler.EmptyShoppingCart(shoppingCartRepository.InMemoryShoppingCart);
-            });
+            var shoppingCart = shoppingCartRepository.InMemoryShoppingCart.EmptyShoppingCart();
+            var updatedCart = await shoppingCartRepository.Update(shoppingCart);
 
-            return new ObjectResult(shoppingCartRepository.InMemoryShoppingCart)
+            return new ObjectResult(updatedCart)
             {
                 StatusCode = (int) HttpStatusCode.OK
             };

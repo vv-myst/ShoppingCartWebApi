@@ -1,6 +1,6 @@
 ﻿using System.Net;
 using Microsoft.AspNetCore.Mvc;
-using ShoppingCartWebApi.Models;
+using ShoppingCartWebApi.Models.Interfaces;
 
 namespace ShoppingCartWebApi.Controllers.HttpErrors
 {
@@ -15,7 +15,7 @@ namespace ShoppingCartWebApi.Controllers.HttpErrors
             return error;
         }
 
-        public static IActionResult ErrorItemIdsDoNotMatch(this Item item, int itemId)
+        public static IActionResult ErrorItemIdsDoNotMatch(this IItem item, int itemId)
         {
             var error = new ObjectResult(
                 $"ItemId in the Url: {itemId} and ItemId of the Item in the body: {item.Id} do not match")

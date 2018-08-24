@@ -1,13 +1,10 @@
-﻿
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using NUnit.Framework;
 using ShoppingCartWebApi;
 using ShoppingCartWebApi.InMemoryRepository;
 using ShoppingCartWebApi.InMemoryRepository.Interfaces;
-using ShoppingCartWebApi.Models.Handlers;
-using ShoppingCartWebApi.Models.Interfaces;
 
 namespace ShoppingCartWebApiTests
 {
@@ -34,15 +31,6 @@ namespace ShoppingCartWebApiTests
             
             Assert.That(shoppingCartRepo, Is.Not.Null);
             Assert.That(shoppingCartRepo, Is.TypeOf<ShoppingCartRepository>());
-        }
-        
-        [TestCase]
-        public void ConfigureServices_AddsShoppingCartHandlerService()
-        {
-            var shoppingCartHandler = serviceProvider.GetService<IShoppingCartHandler>();
-            
-            Assert.That(shoppingCartHandler, Is.Not.Null);
-            Assert.That(shoppingCartHandler, Is.TypeOf<ShoppingCartHandler>());
         }
     }
 }

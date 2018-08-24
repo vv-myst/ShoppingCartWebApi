@@ -4,8 +4,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ShoppingCartWebApi.InMemoryRepository;
 using ShoppingCartWebApi.InMemoryRepository.Interfaces;
-using ShoppingCartWebApi.Models.Handlers;
-using ShoppingCartWebApi.Models.Interfaces;
 
 namespace ShoppingCartWebApi
 {
@@ -23,10 +21,7 @@ namespace ShoppingCartWebApi
         {
             services.AddMvc();
             var shoppingCartRepository = new ShoppingCartRepository();
-            var shoppingCartHandler = new ShoppingCartHandler(shoppingCartRepository);
-            
             services.AddSingleton<IShoppingCartRepository>(item => shoppingCartRepository);
-            services.AddScoped<IShoppingCartHandler>(item => shoppingCartHandler);
             services.BuildServiceProvider();
         }
 

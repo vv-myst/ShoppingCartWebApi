@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using ShoppingCartWebApi.Models;
+using ShoppingCartWebApi.Models.Interfaces;
 
 namespace ShoppingCartWebApi.InMemoryRepository.Interfaces
 {
@@ -13,7 +14,7 @@ namespace ShoppingCartWebApi.InMemoryRepository.Interfaces
         /// <summary>
         ///     Update the shopping cart values
         /// </summary>
-        /// <param name="shoppingCart">Shopping cart entity</param>
-        Task<ShoppingCart> Update(ShoppingCart shoppingCart);
+        /// <param name="updatedCart">Shopping cart entity</param>
+        Task<ShoppingCart> Update(IShoppingCart updatedCart);
     }
 }

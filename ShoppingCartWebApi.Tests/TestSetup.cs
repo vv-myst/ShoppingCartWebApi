@@ -1,20 +1,28 @@
-﻿using Moq;
+﻿using AutoFixture;
 using NUnit.Framework;
 using ShoppingCartWebApi.Models;
+using ShoppingCartWebApi.Models.Interfaces;
 
 namespace ShoppingCartWebApiTests
 {
     [SetUpFixture]
     public class TestSetup
     {
+        protected IItem MockItem1;
+        protected IItem MockItem2;
+
         [OneTimeSetUp]
         public void Init()
         {
-            MockItem1 = new Mock<Item>(100, "Dummy Item 1", 100.00M, 10, "Dummy Item 1").Object;
-            MockItem2 = new Mock<Item>(200, "Dummy Item 2", 50.00M, 20, "Dummy Item 2").Object;
+            var fixture = new Fixture();
+
+            MockItem1 = fixture.Build<Item>().With(x => x.Id, 100).With(x => x.Name, "Dummy Item 1")
+                .With(x => x.Value, 100.00M).With(x => x.InventoryCount, 10).With(x => x.Description, "Dummy Item 1")
+                .Create();
+
+            MockItem2 = fixture.Build<Item>().With(x => x.Id, 200).With(x => x.Name, "Dummy Item 2")
+                .With(x => x.Value, 50.00M).With(x => x.InventoryCount, 20).With(x => x.Description, "Dummy Item 2")
+                .Create();
         }
-        
-        protected Item MockItem1;
-        protected Item MockItem2;
     }
 }
